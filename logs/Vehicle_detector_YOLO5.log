@@ -1,0 +1,170 @@
+2022-09-04 12:03:46,608:Detector_related.vehicle_detector_YOLOV5:DEBUG:Initialisation took 0.1325811s
+2022-09-04 12:03:56,349:Detector_related.vehicle_detector_YOLOV5:DEBUG:Detecting car in file C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_04_12_03_55.jpg
+2022-09-04 12:03:56,627:Detector_related.vehicle_detector_YOLOV5:DEBUG:file name old 2022_09_04_12_03_55.jpg
+2022-09-04 12:03:56,627:Detector_related.vehicle_detector_YOLOV5:DEBUG:Path exists, no need to create
+2022-09-04 12:03:56,635:Detector_related.vehicle_detector_YOLOV5:INFO:Detected cars. Image file: C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_03_55_cars.jpg
+2022-09-04 12:03:56,635:Detector_related.vehicle_detector_YOLOV5:INFO:flag_return_data is True returning: C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_03_55_cars.jpg
+2022-09-04 12:03:56,636:Detector_related.vehicle_detector_YOLOV5:DEBUG:Detection took 0.286915500000001s
+2022-09-04 12:03:56,636:Detector_related.vehicle_detector_YOLOV5:DEBUG:Highest confidence object detected 0.6275804042816162 cars in picture C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_04_12_03_55.jpg
+2022-09-04 12:04:06,352:Detector_related.vehicle_detector_YOLOV5:DEBUG:Detecting car in file C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_04_12_04_06.jpg
+2022-09-04 12:04:06,611:Detector_related.vehicle_detector_YOLOV5:DEBUG:file name old 2022_09_04_12_04_06.jpg
+2022-09-04 12:04:06,612:Detector_related.vehicle_detector_YOLOV5:DEBUG:Path exists, no need to create
+2022-09-04 12:04:06,619:Detector_related.vehicle_detector_YOLOV5:INFO:Detected cars. Image file: C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_04_06_cars.jpg
+2022-09-04 12:04:06,620:Detector_related.vehicle_detector_YOLOV5:INFO:flag_return_data is True returning: C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_04_06_cars.jpg
+2022-09-04 12:04:06,620:Detector_related.vehicle_detector_YOLOV5:DEBUG:Detection took 0.26695130000000233s
+2022-09-04 12:04:06,620:Detector_related.vehicle_detector_YOLOV5:DEBUG:Highest confidence object detected 0.5964735150337219 cars in picture C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_04_12_04_06.jpg
+2022-09-04 12:04:16,348:Detector_related.vehicle_detector_YOLOV5:DEBUG:Detecting car in file C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_04_12_04_16.jpg
+2022-09-04 12:04:16,684:Detector_related.vehicle_detector_YOLOV5:DEBUG:file name old 2022_09_04_12_04_16.jpg
+2022-09-04 12:04:16,685:Detector_related.vehicle_detector_YOLOV5:DEBUG:Path exists, no need to create
+2022-09-04 12:04:16,692:Detector_related.vehicle_detector_YOLOV5:INFO:Detected cars. Image file: C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_04_16_cars.jpg
+2022-09-04 12:04:16,692:Detector_related.vehicle_detector_YOLOV5:INFO:flag_return_data is True returning: C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_04_16_cars.jpg
+2022-09-04 12:04:16,693:Detector_related.vehicle_detector_YOLOV5:DEBUG:Detection took 0.3446218000000023s
+2022-09-04 12:04:16,693:Detector_related.vehicle_detector_YOLOV5:DEBUG:Highest confidence object detected 0.6759403347969055 cars in picture C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_04_12_04_16.jpg
+2022-09-04 12:04:26,419:Detector_related.vehicle_detector_YOLOV5:DEBUG:Detecting car in file C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_04_12_04_26.jpg
+2022-09-04 12:04:26,747:Detector_related.vehicle_detector_YOLOV5:DEBUG:file name old 2022_09_04_12_04_26.jpg
+2022-09-04 12:04:26,747:Detector_related.vehicle_detector_YOLOV5:DEBUG:Path exists, no need to create
+2022-09-04 12:04:26,755:Detector_related.vehicle_detector_YOLOV5:INFO:Detected cars. Image file: C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_04_26_cars.jpg
+2022-09-04 12:04:26,755:Detector_related.vehicle_detector_YOLOV5:INFO:flag_return_data is True returning: C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_04_26_cars.jpg
+2022-09-04 12:04:26,755:Detector_related.vehicle_detector_YOLOV5:DEBUG:Detection took 0.33648310000000237s
+2022-09-04 12:04:26,756:Detector_related.vehicle_detector_YOLOV5:DEBUG:Highest confidence object detected 0.627440869808197 cars in picture C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_04_12_04_26.jpg
+2022-09-04 12:04:36,497:Detector_related.vehicle_detector_YOLOV5:DEBUG:Detecting car in file C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_04_12_04_36.jpg
+2022-09-04 12:04:36,776:Detector_related.vehicle_detector_YOLOV5:DEBUG:file name old 2022_09_04_12_04_36.jpg
+2022-09-04 12:04:36,776:Detector_related.vehicle_detector_YOLOV5:DEBUG:Path exists, no need to create
+2022-09-04 12:04:36,784:Detector_related.vehicle_detector_YOLOV5:INFO:Detected cars. Image file: C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_04_36_cars.jpg
+2022-09-04 12:04:36,784:Detector_related.vehicle_detector_YOLOV5:INFO:flag_return_data is True returning: C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_04_36_cars.jpg
+2022-09-04 12:04:36,784:Detector_related.vehicle_detector_YOLOV5:DEBUG:Detection took 0.28755569999999864s
+2022-09-04 12:04:36,785:Detector_related.vehicle_detector_YOLOV5:DEBUG:Highest confidence object detected 0.6676814556121826 cars in picture C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_04_12_04_36.jpg
+2022-09-04 12:04:47,000:Detector_related.vehicle_detector_YOLOV5:DEBUG:Detecting car in file C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_04_12_04_46.jpg
+2022-09-04 12:04:47,650:Detector_related.vehicle_detector_YOLOV5:DEBUG:file name old 2022_09_04_12_04_46.jpg
+2022-09-04 12:04:47,650:Detector_related.vehicle_detector_YOLOV5:DEBUG:Path exists, no need to create
+2022-09-04 12:04:47,661:Detector_related.vehicle_detector_YOLOV5:INFO:Detected cars. Image file: C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_04_46_cars.jpg
+2022-09-04 12:04:47,661:Detector_related.vehicle_detector_YOLOV5:INFO:flag_return_data is True returning: C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_04_46_cars.jpg
+2022-09-04 12:04:47,661:Detector_related.vehicle_detector_YOLOV5:DEBUG:Detection took 0.6615034000000009s
+2022-09-04 12:04:47,662:Detector_related.vehicle_detector_YOLOV5:DEBUG:Highest confidence object detected 0.49914073944091797 cars in picture C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_04_12_04_46.jpg
+2022-09-04 12:04:56,888:Detector_related.vehicle_detector_YOLOV5:DEBUG:Detecting car in file C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_04_12_04_56.jpg
+2022-09-04 12:04:57,227:Detector_related.vehicle_detector_YOLOV5:DEBUG:file name old 2022_09_04_12_04_56.jpg
+2022-09-04 12:04:57,228:Detector_related.vehicle_detector_YOLOV5:DEBUG:Path exists, no need to create
+2022-09-04 12:04:57,236:Detector_related.vehicle_detector_YOLOV5:INFO:Detected cars. Image file: C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_04_56_cars.jpg
+2022-09-04 12:04:57,236:Detector_related.vehicle_detector_YOLOV5:INFO:flag_return_data is True returning: C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_04_56_cars.jpg
+2022-09-04 12:04:57,236:Detector_related.vehicle_detector_YOLOV5:DEBUG:Detection took 0.3483312999999981s
+2022-09-04 12:04:57,237:Detector_related.vehicle_detector_YOLOV5:DEBUG:Highest confidence object detected 0.6286962032318115 cars in picture C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_04_12_04_56.jpg
+2022-09-04 12:05:06,962:Detector_related.vehicle_detector_YOLOV5:DEBUG:Detecting car in file C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_04_12_05_06.jpg
+2022-09-04 12:05:07,231:Detector_related.vehicle_detector_YOLOV5:DEBUG:file name old 2022_09_04_12_05_06.jpg
+2022-09-04 12:05:07,231:Detector_related.vehicle_detector_YOLOV5:DEBUG:Path exists, no need to create
+2022-09-04 12:05:07,239:Detector_related.vehicle_detector_YOLOV5:INFO:Detected cars. Image file: C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_05_06_cars.jpg
+2022-09-04 12:05:07,239:Detector_related.vehicle_detector_YOLOV5:INFO:flag_return_data is True returning: C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_05_06_cars.jpg
+2022-09-04 12:05:07,239:Detector_related.vehicle_detector_YOLOV5:DEBUG:Detection took 0.27732579999999984s
+2022-09-04 12:05:07,239:Detector_related.vehicle_detector_YOLOV5:DEBUG:Highest confidence object detected 0.5392689108848572 cars in picture C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_04_12_05_06.jpg
+2022-09-04 12:05:16,982:Detector_related.vehicle_detector_YOLOV5:DEBUG:Detecting car in file C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_04_12_05_16.jpg
+2022-09-04 12:05:17,262:Detector_related.vehicle_detector_YOLOV5:DEBUG:file name old 2022_09_04_12_05_16.jpg
+2022-09-04 12:05:17,262:Detector_related.vehicle_detector_YOLOV5:DEBUG:Path exists, no need to create
+2022-09-04 12:05:17,269:Detector_related.vehicle_detector_YOLOV5:INFO:Detected cars. Image file: C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_05_16_cars.jpg
+2022-09-04 12:05:17,270:Detector_related.vehicle_detector_YOLOV5:INFO:flag_return_data is True returning: C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_05_16_cars.jpg
+2022-09-04 12:05:17,270:Detector_related.vehicle_detector_YOLOV5:DEBUG:Detection took 0.28790219999999067s
+2022-09-04 12:05:17,270:Detector_related.vehicle_detector_YOLOV5:DEBUG:Highest confidence object detected 0.4411909580230713 cars in picture C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_04_12_05_16.jpg
+2022-09-04 12:05:26,982:Detector_related.vehicle_detector_YOLOV5:DEBUG:Detecting car in file C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_04_12_05_26.jpg
+2022-09-04 12:05:27,283:Detector_related.vehicle_detector_YOLOV5:DEBUG:file name old 2022_09_04_12_05_26.jpg
+2022-09-04 12:05:27,284:Detector_related.vehicle_detector_YOLOV5:DEBUG:Path exists, no need to create
+2022-09-04 12:05:27,292:Detector_related.vehicle_detector_YOLOV5:INFO:Detected cars. Image file: C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_05_26_cars.jpg
+2022-09-04 12:05:27,292:Detector_related.vehicle_detector_YOLOV5:INFO:flag_return_data is True returning: C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_05_26_cars.jpg
+2022-09-04 12:05:27,292:Detector_related.vehicle_detector_YOLOV5:DEBUG:Detection took 0.3104551999999927s
+2022-09-04 12:05:27,292:Detector_related.vehicle_detector_YOLOV5:DEBUG:Highest confidence object detected 0.5021843314170837 cars in picture C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_04_12_05_26.jpg
+2022-09-04 12:05:37,524:Detector_related.vehicle_detector_YOLOV5:DEBUG:Detecting car in file C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_04_12_05_37.jpg
+2022-09-04 12:05:37,775:Detector_related.vehicle_detector_YOLOV5:DEBUG:file name old 2022_09_04_12_05_37.jpg
+2022-09-04 12:05:37,776:Detector_related.vehicle_detector_YOLOV5:DEBUG:Path exists, no need to create
+2022-09-04 12:05:37,784:Detector_related.vehicle_detector_YOLOV5:INFO:Detected cars. Image file: C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_05_37_cars.jpg
+2022-09-04 12:05:37,784:Detector_related.vehicle_detector_YOLOV5:INFO:flag_return_data is True returning: C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_05_37_cars.jpg
+2022-09-04 12:05:37,784:Detector_related.vehicle_detector_YOLOV5:DEBUG:Detection took 0.2607439999999883s
+2022-09-04 12:05:37,785:Detector_related.vehicle_detector_YOLOV5:DEBUG:Highest confidence object detected 0.5233424305915833 cars in picture C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_04_12_05_37.jpg
+2022-09-04 12:05:47,501:Detector_related.vehicle_detector_YOLOV5:DEBUG:Detecting car in file C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_04_12_05_47.jpg
+2022-09-04 12:05:47,768:Detector_related.vehicle_detector_YOLOV5:DEBUG:file name old 2022_09_04_12_05_47.jpg
+2022-09-04 12:05:47,768:Detector_related.vehicle_detector_YOLOV5:DEBUG:Path exists, no need to create
+2022-09-04 12:05:47,778:Detector_related.vehicle_detector_YOLOV5:INFO:Detected cars. Image file: C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_05_47_cars.jpg
+2022-09-04 12:05:47,778:Detector_related.vehicle_detector_YOLOV5:INFO:flag_return_data is True returning: C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_05_47_cars.jpg
+2022-09-04 12:05:47,778:Detector_related.vehicle_detector_YOLOV5:DEBUG:Detection took 0.2772212999999937s
+2022-09-04 12:05:47,778:Detector_related.vehicle_detector_YOLOV5:DEBUG:Highest confidence object detected 0.5572513937950134 cars in picture C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_04_12_05_47.jpg
+2022-09-04 12:05:57,515:Detector_related.vehicle_detector_YOLOV5:DEBUG:Detecting car in file C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_04_12_05_57.jpg
+2022-09-04 12:05:57,770:Detector_related.vehicle_detector_YOLOV5:DEBUG:file name old 2022_09_04_12_05_57.jpg
+2022-09-04 12:05:57,770:Detector_related.vehicle_detector_YOLOV5:DEBUG:Path exists, no need to create
+2022-09-04 12:05:57,778:Detector_related.vehicle_detector_YOLOV5:INFO:Detected cars. Image file: C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_05_57_cars.jpg
+2022-09-04 12:05:57,778:Detector_related.vehicle_detector_YOLOV5:INFO:flag_return_data is True returning: C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_05_57_cars.jpg
+2022-09-04 12:05:57,778:Detector_related.vehicle_detector_YOLOV5:DEBUG:Detection took 0.2635026000000096s
+2022-09-04 12:05:57,778:Detector_related.vehicle_detector_YOLOV5:DEBUG:Highest confidence object detected 0.39392271637916565 cars in picture C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_04_12_05_57.jpg
+2022-09-04 12:06:07,523:Detector_related.vehicle_detector_YOLOV5:DEBUG:Detecting car in file C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_04_12_06_07.jpg
+2022-09-04 12:06:07,807:Detector_related.vehicle_detector_YOLOV5:DEBUG:file name old 2022_09_04_12_06_07.jpg
+2022-09-04 12:06:07,808:Detector_related.vehicle_detector_YOLOV5:DEBUG:Path exists, no need to create
+2022-09-04 12:06:07,815:Detector_related.vehicle_detector_YOLOV5:INFO:Detected cars. Image file: C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_06_07_cars.jpg
+2022-09-04 12:06:07,815:Detector_related.vehicle_detector_YOLOV5:INFO:flag_return_data is True returning: C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_06_07_cars.jpg
+2022-09-04 12:06:07,815:Detector_related.vehicle_detector_YOLOV5:DEBUG:Detection took 0.29253199999999424s
+2022-09-04 12:06:07,816:Detector_related.vehicle_detector_YOLOV5:DEBUG:Highest confidence object detected 0.5068361163139343 cars in picture C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_04_12_06_07.jpg
+2022-09-04 12:06:17,544:Detector_related.vehicle_detector_YOLOV5:DEBUG:Detecting car in file C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_04_12_06_17.jpg
+2022-09-04 12:06:17,800:Detector_related.vehicle_detector_YOLOV5:DEBUG:file name old 2022_09_04_12_06_17.jpg
+2022-09-04 12:06:17,801:Detector_related.vehicle_detector_YOLOV5:DEBUG:Path exists, no need to create
+2022-09-04 12:06:17,808:Detector_related.vehicle_detector_YOLOV5:INFO:Detected cars. Image file: C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_06_17_cars.jpg
+2022-09-04 12:06:17,809:Detector_related.vehicle_detector_YOLOV5:INFO:flag_return_data is True returning: C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_06_17_cars.jpg
+2022-09-04 12:06:17,809:Detector_related.vehicle_detector_YOLOV5:DEBUG:Detection took 0.26506330000000844s
+2022-09-04 12:06:17,809:Detector_related.vehicle_detector_YOLOV5:DEBUG:Highest confidence object detected 0.5908663868904114 cars in picture C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_04_12_06_17.jpg
+2022-09-04 12:06:28,062:Detector_related.vehicle_detector_YOLOV5:DEBUG:Detecting car in file C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_04_12_06_27.jpg
+2022-09-04 12:06:28,501:Detector_related.vehicle_detector_YOLOV5:DEBUG:file name old 2022_09_04_12_06_27.jpg
+2022-09-04 12:06:28,502:Detector_related.vehicle_detector_YOLOV5:DEBUG:Path exists, no need to create
+2022-09-04 12:06:28,509:Detector_related.vehicle_detector_YOLOV5:INFO:Detected cars. Image file: C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_06_27_cars.jpg
+2022-09-04 12:06:28,510:Detector_related.vehicle_detector_YOLOV5:INFO:flag_return_data is True returning: C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_06_27_cars.jpg
+2022-09-04 12:06:28,510:Detector_related.vehicle_detector_YOLOV5:DEBUG:Detection took 0.4473754999999926s
+2022-09-04 12:06:28,510:Detector_related.vehicle_detector_YOLOV5:DEBUG:Highest confidence object detected 0.6320408582687378 cars in picture C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_04_12_06_27.jpg
+2022-09-04 12:06:37,724:Detector_related.vehicle_detector_YOLOV5:DEBUG:Detecting car in file C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_04_12_06_37.jpg
+2022-09-04 12:06:38,072:Detector_related.vehicle_detector_YOLOV5:DEBUG:file name old 2022_09_04_12_06_37.jpg
+2022-09-04 12:06:38,072:Detector_related.vehicle_detector_YOLOV5:DEBUG:Path exists, no need to create
+2022-09-04 12:06:38,080:Detector_related.vehicle_detector_YOLOV5:INFO:Detected cars. Image file: C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_06_37_cars.jpg
+2022-09-04 12:06:38,080:Detector_related.vehicle_detector_YOLOV5:INFO:flag_return_data is True returning: C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_06_37_cars.jpg
+2022-09-04 12:06:38,080:Detector_related.vehicle_detector_YOLOV5:DEBUG:Detection took 0.3557096000000115s
+2022-09-04 12:06:38,080:Detector_related.vehicle_detector_YOLOV5:DEBUG:Highest confidence object detected 0.5940876007080078 cars in picture C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_04_12_06_37.jpg
+2022-09-04 12:06:48,292:Detector_related.vehicle_detector_YOLOV5:DEBUG:Detecting car in file C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_04_12_06_47.jpg
+2022-09-04 12:06:48,546:Detector_related.vehicle_detector_YOLOV5:DEBUG:file name old 2022_09_04_12_06_47.jpg
+2022-09-04 12:06:48,546:Detector_related.vehicle_detector_YOLOV5:DEBUG:Path exists, no need to create
+2022-09-04 12:06:48,554:Detector_related.vehicle_detector_YOLOV5:INFO:Detected cars. Image file: C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_06_47_cars.jpg
+2022-09-04 12:06:48,554:Detector_related.vehicle_detector_YOLOV5:INFO:flag_return_data is True returning: C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_06_47_cars.jpg
+2022-09-04 12:06:48,554:Detector_related.vehicle_detector_YOLOV5:DEBUG:Detection took 0.26228290000000243s
+2022-09-04 12:06:48,554:Detector_related.vehicle_detector_YOLOV5:DEBUG:Highest confidence object detected 0.539249837398529 cars in picture C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_04_12_06_47.jpg
+2022-09-04 12:06:58,289:Detector_related.vehicle_detector_YOLOV5:DEBUG:Detecting car in file C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_04_12_06_57.jpg
+2022-09-04 12:06:58,557:Detector_related.vehicle_detector_YOLOV5:DEBUG:file name old 2022_09_04_12_06_57.jpg
+2022-09-04 12:06:58,557:Detector_related.vehicle_detector_YOLOV5:DEBUG:Path exists, no need to create
+2022-09-04 12:06:58,565:Detector_related.vehicle_detector_YOLOV5:INFO:Detected cars. Image file: C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_06_57_cars.jpg
+2022-09-04 12:06:58,565:Detector_related.vehicle_detector_YOLOV5:INFO:flag_return_data is True returning: C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_06_57_cars.jpg
+2022-09-04 12:06:58,565:Detector_related.vehicle_detector_YOLOV5:DEBUG:Detection took 0.27623819999999455s
+2022-09-04 12:06:58,565:Detector_related.vehicle_detector_YOLOV5:DEBUG:Highest confidence object detected 0.6298682689666748 cars in picture C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_04_12_06_57.jpg
+2022-09-04 12:07:08,247:Detector_related.vehicle_detector_YOLOV5:DEBUG:Detecting car in file C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_04_12_07_07.jpg
+2022-09-04 12:07:08,534:Detector_related.vehicle_detector_YOLOV5:DEBUG:file name old 2022_09_04_12_07_07.jpg
+2022-09-04 12:07:08,535:Detector_related.vehicle_detector_YOLOV5:DEBUG:Path exists, no need to create
+2022-09-04 12:07:08,543:Detector_related.vehicle_detector_YOLOV5:INFO:Detected cars. Image file: C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_07_07_cars.jpg
+2022-09-04 12:07:08,543:Detector_related.vehicle_detector_YOLOV5:INFO:flag_return_data is True returning: C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_07_07_cars.jpg
+2022-09-04 12:07:08,544:Detector_related.vehicle_detector_YOLOV5:DEBUG:Detection took 0.2966807999999901s
+2022-09-04 12:07:08,544:Detector_related.vehicle_detector_YOLOV5:DEBUG:Highest confidence object detected 0.575114905834198 cars in picture C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_04_12_07_07.jpg
+2022-09-04 12:07:18,260:Detector_related.vehicle_detector_YOLOV5:DEBUG:Detecting car in file C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_04_12_07_18.jpg
+2022-09-04 12:07:18,537:Detector_related.vehicle_detector_YOLOV5:DEBUG:file name old 2022_09_04_12_07_18.jpg
+2022-09-04 12:07:18,537:Detector_related.vehicle_detector_YOLOV5:DEBUG:Path exists, no need to create
+2022-09-04 12:07:18,545:Detector_related.vehicle_detector_YOLOV5:INFO:Detected cars. Image file: C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_07_18_cars.jpg
+2022-09-04 12:07:18,545:Detector_related.vehicle_detector_YOLOV5:INFO:flag_return_data is True returning: C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_07_18_cars.jpg
+2022-09-04 12:07:18,545:Detector_related.vehicle_detector_YOLOV5:DEBUG:Detection took 0.28531979999999635s
+2022-09-04 12:07:18,546:Detector_related.vehicle_detector_YOLOV5:DEBUG:Highest confidence object detected 0.6306911110877991 cars in picture C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_04_12_07_18.jpg
+2022-09-04 12:07:28,270:Detector_related.vehicle_detector_YOLOV5:DEBUG:Detecting car in file C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_04_12_07_28.jpg
+2022-09-04 12:07:28,565:Detector_related.vehicle_detector_YOLOV5:DEBUG:file name old 2022_09_04_12_07_28.jpg
+2022-09-04 12:07:28,565:Detector_related.vehicle_detector_YOLOV5:DEBUG:Path exists, no need to create
+2022-09-04 12:07:28,574:Detector_related.vehicle_detector_YOLOV5:INFO:Detected cars. Image file: C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_07_28_cars.jpg
+2022-09-04 12:07:28,574:Detector_related.vehicle_detector_YOLOV5:INFO:flag_return_data is True returning: C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_07_28_cars.jpg
+2022-09-04 12:07:28,575:Detector_related.vehicle_detector_YOLOV5:DEBUG:Detection took 0.30473850000001335s
+2022-09-04 12:07:28,575:Detector_related.vehicle_detector_YOLOV5:DEBUG:Highest confidence object detected 0.4951372742652893 cars in picture C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_04_12_07_28.jpg
+2022-09-04 12:07:38,782:Detector_related.vehicle_detector_YOLOV5:DEBUG:Detecting car in file C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_04_12_07_38.jpg
+2022-09-04 12:07:39,096:Detector_related.vehicle_detector_YOLOV5:DEBUG:file name old 2022_09_04_12_07_38.jpg
+2022-09-04 12:07:39,097:Detector_related.vehicle_detector_YOLOV5:DEBUG:Path exists, no need to create
+2022-09-04 12:07:39,104:Detector_related.vehicle_detector_YOLOV5:INFO:Detected cars. Image file: C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_07_38_cars.jpg
+2022-09-04 12:07:39,104:Detector_related.vehicle_detector_YOLOV5:INFO:flag_return_data is True returning: C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_07_38_cars.jpg
+2022-09-04 12:07:39,104:Detector_related.vehicle_detector_YOLOV5:DEBUG:Detection took 0.32144329999999854s
+2022-09-04 12:07:39,105:Detector_related.vehicle_detector_YOLOV5:DEBUG:Highest confidence object detected 0.6680614948272705 cars in picture C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_04_12_07_38.jpg
+2022-09-04 12:07:59,234:Detector_related.vehicle_detector_YOLOV5:DEBUG:Initialisation took 0.1067093s
+2022-09-04 12:08:08,851:Detector_related.vehicle_detector_YOLOV5:DEBUG:Detecting car in file C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_04_12_08_08.jpg
+2022-09-04 12:08:09,207:Detector_related.vehicle_detector_YOLOV5:DEBUG:file name old 2022_09_04_12_08_08.jpg
+2022-09-04 12:08:09,208:Detector_related.vehicle_detector_YOLOV5:DEBUG:Path exists, no need to create
+2022-09-04 12:08:09,217:Detector_related.vehicle_detector_YOLOV5:INFO:Detected cars. Image file: C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_08_08_cars.jpg
+2022-09-04 12:08:09,218:Detector_related.vehicle_detector_YOLOV5:INFO:flag_return_data is True returning: C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_08_08_cars.jpg
+2022-09-04 12:08:09,218:Detector_related.vehicle_detector_YOLOV5:DEBUG:Detection took 0.367166000000001s
+2022-09-04 12:08:09,219:Detector_related.vehicle_detector_YOLOV5:DEBUG:Highest confidence object detected 0.6489682793617249 cars in picture C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_04_12_08_08.jpg

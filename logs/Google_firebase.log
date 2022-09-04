@@ -1,0 +1,114 @@
+2022-09-04 12:03:46,475:firebase:INFO:Firebase initialised
+2022-09-04 12:04:06,679:firebase:DEBUG:Queue not empty
+2022-09-04 12:04:07,327:firebase:ERROR:No file to delete
+2022-09-04 12:04:07,328:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_03_55_cars.jpg
+2022-09-04 12:04:07,328:firebase:DEBUG:Deleting after upload
+2022-09-04 12:04:07,328:firebase:DEBUG:Deleted C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_03_55_cars.jpg
+2022-09-04 12:04:16,415:firebase:DEBUG:Queue not empty
+2022-09-04 12:04:16,623:firebase:ERROR:No file to delete
+2022-09-04 12:04:16,623:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_04_06_cars.jpg
+2022-09-04 12:04:16,623:firebase:DEBUG:Deleting after upload
+2022-09-04 12:04:16,624:firebase:DEBUG:Deleted C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_04_06_cars.jpg
+2022-09-04 12:04:26,720:firebase:DEBUG:Queue not empty
+2022-09-04 12:04:26,838:firebase:ERROR:No file to delete
+2022-09-04 12:04:26,838:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_04_16_cars.jpg
+2022-09-04 12:04:26,838:firebase:DEBUG:Deleting after upload
+2022-09-04 12:04:26,838:firebase:DEBUG:Deleted C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_04_16_cars.jpg
+2022-09-04 12:04:36,949:firebase:DEBUG:Queue not empty
+2022-09-04 12:04:37,090:firebase:ERROR:No file to delete
+2022-09-04 12:04:37,091:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_04_26_cars.jpg
+2022-09-04 12:04:37,091:firebase:DEBUG:Deleting after upload
+2022-09-04 12:04:37,092:firebase:DEBUG:Deleted C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_04_26_cars.jpg
+2022-09-04 12:04:47,196:firebase:DEBUG:Queue not empty
+2022-09-04 12:04:47,387:firebase:ERROR:No file to delete
+2022-09-04 12:04:47,388:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_04_36_cars.jpg
+2022-09-04 12:04:47,388:firebase:DEBUG:Deleting after upload
+2022-09-04 12:04:47,388:firebase:DEBUG:Deleted C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_04_36_cars.jpg
+2022-09-04 12:04:57,478:firebase:DEBUG:Queue not empty
+2022-09-04 12:04:57,603:firebase:ERROR:No file to delete
+2022-09-04 12:04:57,604:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_04_46_cars.jpg
+2022-09-04 12:04:57,604:firebase:DEBUG:Deleting after upload
+2022-09-04 12:04:57,604:firebase:DEBUG:Deleted C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_04_46_cars.jpg
+2022-09-04 12:05:07,692:firebase:DEBUG:Queue not empty
+2022-09-04 12:05:07,808:firebase:ERROR:No file to delete
+2022-09-04 12:05:07,808:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_04_56_cars.jpg
+2022-09-04 12:05:07,808:firebase:DEBUG:Deleting after upload
+2022-09-04 12:05:07,809:firebase:DEBUG:Deleted C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_04_56_cars.jpg
+2022-09-04 12:05:16,888:firebase:DEBUG:Queue not empty
+2022-09-04 12:05:17,000:firebase:ERROR:No file to delete
+2022-09-04 12:05:17,000:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_05_06_cars.jpg
+2022-09-04 12:05:17,000:firebase:DEBUG:Deleting after upload
+2022-09-04 12:05:17,001:firebase:DEBUG:Deleted C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_05_06_cars.jpg
+2022-09-04 12:05:28,093:firebase:DEBUG:Queue not empty
+2022-09-04 12:05:28,215:firebase:ERROR:No file to delete
+2022-09-04 12:05:28,215:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_05_16_cars.jpg
+2022-09-04 12:05:28,216:firebase:DEBUG:Deleting after upload
+2022-09-04 12:05:28,216:firebase:DEBUG:Deleted C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_05_16_cars.jpg
+2022-09-04 12:05:38,302:firebase:DEBUG:Queue not empty
+2022-09-04 12:05:38,417:firebase:ERROR:No file to delete
+2022-09-04 12:05:38,417:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_05_26_cars.jpg
+2022-09-04 12:05:38,417:firebase:DEBUG:Deleting after upload
+2022-09-04 12:05:38,418:firebase:DEBUG:Deleted C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_05_26_cars.jpg
+2022-09-04 12:05:48,515:firebase:DEBUG:Queue not empty
+2022-09-04 12:05:48,635:firebase:ERROR:No file to delete
+2022-09-04 12:05:48,635:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_05_37_cars.jpg
+2022-09-04 12:05:48,635:firebase:DEBUG:Deleting after upload
+2022-09-04 12:05:48,636:firebase:DEBUG:Deleted C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_05_37_cars.jpg
+2022-09-04 12:05:58,725:firebase:DEBUG:Queue not empty
+2022-09-04 12:05:58,840:firebase:ERROR:No file to delete
+2022-09-04 12:05:58,840:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_05_47_cars.jpg
+2022-09-04 12:05:58,841:firebase:DEBUG:Deleting after upload
+2022-09-04 12:05:58,841:firebase:DEBUG:Deleted C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_05_47_cars.jpg
+2022-09-04 12:06:07,942:firebase:DEBUG:Queue not empty
+2022-09-04 12:06:08,067:firebase:ERROR:No file to delete
+2022-09-04 12:06:08,068:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_05_57_cars.jpg
+2022-09-04 12:06:08,068:firebase:DEBUG:Deleting after upload
+2022-09-04 12:06:08,068:firebase:DEBUG:Deleted C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_05_57_cars.jpg
+2022-09-04 12:06:18,167:firebase:DEBUG:Queue not empty
+2022-09-04 12:06:18,286:firebase:ERROR:No file to delete
+2022-09-04 12:06:18,286:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_06_07_cars.jpg
+2022-09-04 12:06:18,287:firebase:DEBUG:Deleting after upload
+2022-09-04 12:06:18,287:firebase:DEBUG:Deleted C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_06_07_cars.jpg
+2022-09-04 12:06:28,409:firebase:DEBUG:Queue not empty
+2022-09-04 12:06:28,540:firebase:ERROR:No file to delete
+2022-09-04 12:06:28,540:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_06_17_cars.jpg
+2022-09-04 12:06:28,540:firebase:DEBUG:Deleting after upload
+2022-09-04 12:06:28,540:firebase:DEBUG:Deleted C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_06_17_cars.jpg
+2022-09-04 12:06:38,645:firebase:DEBUG:Queue not empty
+2022-09-04 12:06:38,759:firebase:ERROR:No file to delete
+2022-09-04 12:06:38,759:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_06_27_cars.jpg
+2022-09-04 12:06:38,760:firebase:DEBUG:Deleting after upload
+2022-09-04 12:06:38,760:firebase:DEBUG:Deleted C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_06_27_cars.jpg
+2022-09-04 12:06:48,849:firebase:DEBUG:Queue not empty
+2022-09-04 12:06:48,966:firebase:ERROR:No file to delete
+2022-09-04 12:06:48,966:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_06_37_cars.jpg
+2022-09-04 12:06:48,966:firebase:DEBUG:Deleting after upload
+2022-09-04 12:06:48,967:firebase:DEBUG:Deleted C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_06_37_cars.jpg
+2022-09-04 12:06:58,054:firebase:DEBUG:Queue not empty
+2022-09-04 12:06:58,174:firebase:ERROR:No file to delete
+2022-09-04 12:06:58,174:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_06_47_cars.jpg
+2022-09-04 12:06:58,174:firebase:DEBUG:Deleting after upload
+2022-09-04 12:06:58,174:firebase:DEBUG:Deleted C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_06_47_cars.jpg
+2022-09-04 12:07:08,262:firebase:DEBUG:Queue not empty
+2022-09-04 12:07:08,377:firebase:ERROR:No file to delete
+2022-09-04 12:07:08,377:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_06_57_cars.jpg
+2022-09-04 12:07:08,377:firebase:DEBUG:Deleting after upload
+2022-09-04 12:07:08,378:firebase:DEBUG:Deleted C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_06_57_cars.jpg
+2022-09-04 12:07:18,479:firebase:DEBUG:Queue not empty
+2022-09-04 12:07:18,593:firebase:ERROR:No file to delete
+2022-09-04 12:07:18,593:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_07_07_cars.jpg
+2022-09-04 12:07:18,593:firebase:DEBUG:Deleting after upload
+2022-09-04 12:07:18,593:firebase:DEBUG:Deleted C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_07_07_cars.jpg
+2022-09-04 12:07:28,676:firebase:DEBUG:Queue not empty
+2022-09-04 12:07:28,797:firebase:ERROR:No file to delete
+2022-09-04 12:07:28,797:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_07_18_cars.jpg
+2022-09-04 12:07:28,798:firebase:DEBUG:Deleting after upload
+2022-09-04 12:07:28,798:firebase:DEBUG:Deleted C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_07_18_cars.jpg
+2022-09-04 12:07:38,891:firebase:DEBUG:Queue not empty
+2022-09-04 12:07:39,042:firebase:ERROR:No file to delete
+2022-09-04 12:07:39,043:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_07_28_cars.jpg
+2022-09-04 12:07:39,043:firebase:DEBUG:Deleting after upload
+2022-09-04 12:07:39,044:firebase:DEBUG:Deleted C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_04_12_07_28_cars.jpg
+2022-09-04 12:07:45,100:firebase:DEBUG:Queue not empty
+2022-09-04 12:07:59,145:firebase:INFO:Firebase initialised
+2022-09-04 12:08:13,267:firebase:DEBUG:Queue not empty
