@@ -199,11 +199,11 @@ class VehicleDetectorYOLO5(Process):
                 self.create_folder(self.PICTURE_FOLDER)
                 new_file_name = os.path.join(self.PICTURE_FOLDER, f"{file_name_wo_ext}_cars.jpg")
                 cv2.imwrite(new_file_name, img)
-                logger.info(f"Detected cars. Image file: {new_file_name}")
+                logger.debug(f"Detected cars. Image file: {new_file_name}")
         if self.delete_picture_after_analysis:
             self.delete_file(file_location_name)
         if flag_return_data:
-            logger.info(f"flag_return_data is True returning: {new_file_name}")
+            logger.debug(f"flag_return_data is True returning: {new_file_name}")
             self.q_out.put((highest_confidence, file_location_name, new_file_name))
         end_detect_time = time.perf_counter()
         logger.debug(f"Detection took {end_detect_time - start_detect_time}s")

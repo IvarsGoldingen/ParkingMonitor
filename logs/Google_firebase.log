@@ -112,3 +112,102 @@
 2022-09-04 12:07:45,100:firebase:DEBUG:Queue not empty
 2022-09-04 12:07:59,145:firebase:INFO:Firebase initialised
 2022-09-04 12:08:13,267:firebase:DEBUG:Queue not empty
+2022-09-10 21:16:43,939:firebase:INFO:Firebase initialised
+2022-09-10 21:21:04,865:firebase:INFO:Firebase initialised
+2022-09-10 21:21:25,603:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_10_21_21_14_cars.jpg
+2022-09-10 21:21:34,786:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_10_21_21_24.jpg
+2022-09-10 21:22:22,990:firebase:INFO:Firebase initialised
+2022-09-10 21:22:43,629:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_10_21_22_32.jpg
+2022-09-10 21:22:53,856:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_10_21_22_42_cars.jpg
+2022-09-10 21:23:03,114:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_10_21_22_52.jpg
+2022-09-10 21:23:13,367:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_10_21_23_02_cars.jpg
+2022-09-10 21:23:23,587:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_10_21_23_12.jpg
+2022-09-10 21:23:33,810:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_10_21_23_22.jpg
+2022-09-10 21:23:44,011:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_10_21_23_33.jpg
+2022-09-10 21:23:54,240:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_10_21_23_43.jpg
+2022-09-10 21:24:04,451:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_10_21_23_53.jpg
+2022-09-10 21:24:14,681:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_10_21_24_03.jpg
+2022-09-10 21:24:24,912:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_10_21_24_13.jpg
+2022-09-10 21:24:35,113:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_10_21_24_23_cars.jpg
+2022-09-10 21:24:44,308:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_10_21_24_33.jpg
+2022-09-10 21:24:54,527:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_10_21_24_43.jpg
+2022-09-10 21:25:04,752:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_10_21_24_53_cars.jpg
+2022-09-10 21:25:14,959:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_10_21_25_03.jpg
+2022-09-10 21:25:25,158:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_10_21_25_13_cars.jpg
+2022-09-10 21:29:58,163:firebase:INFO:Firebase initialised
+2022-09-10 21:30:08,943:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_10_21_30_07.jpg
+2022-09-10 21:38:26,420:firebase:INFO:Firebase initialised
+2022-09-10 21:39:20,590:firebase:INFO:Firebase initialised
+2022-09-10 21:40:19,492:firebase:INFO:Firebase initialised
+2022-09-10 21:40:39,335:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_10_21_40_28_cars.jpg
+2022-09-10 21:44:19,638:firebase:INFO:Firebase initialised
+2022-09-10 21:50:08,888:firebase:INFO:Firebase initialised
+2022-09-13 19:48:50,076:firebase:INFO:Firebase initialised
+2022-09-13 19:49:10,902:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_13_19_48_58_cars.jpg
+2022-09-13 19:49:20,170:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_13_19_49_08.jpg
+2022-09-13 19:49:30,383:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_13_19_49_19_cars.jpg
+2022-09-13 19:51:39,015:firebase:INFO:Firebase initialised
+2022-09-13 19:51:58,851:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_13_19_51_47_cars.jpg
+2022-09-13 19:52:09,049:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_13_19_51_58_cars.jpg
+2022-09-13 19:52:19,243:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_13_19_52_08_cars.jpg
+2022-09-13 19:52:29,423:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_13_19_52_18_cars.jpg
+2022-09-13 19:52:39,011:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_13_19_52_28.jpg
+2022-09-13 19:52:49,252:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_13_19_52_38_cars.jpg
+2022-09-13 19:53:46,621:firebase:INFO:Firebase initialised
+2022-09-13 19:54:07,276:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_13_19_53_55_cars.jpg
+2022-09-13 19:54:16,510:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_13_19_54_05.jpg
+2022-09-13 19:54:26,736:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_13_19_54_15_cars.jpg
+2022-09-13 19:54:36,943:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_13_19_54_25_cars.jpg
+2022-09-13 19:54:47,138:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_13_19_54_36_cars.jpg
+2022-09-13 19:54:57,449:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_13_19_54_46_cars.jpg
+2022-09-13 19:55:06,665:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_13_19_54_56.jpg
+2022-09-13 19:55:16,840:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_13_19_55_06_cars.jpg
+2022-09-13 19:55:27,058:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_13_19_55_16_cars.jpg
+2022-09-13 19:55:37,287:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_13_19_55_26_cars.jpg
+2022-09-13 19:55:47,492:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_13_19_55_36.jpg
+2022-09-13 19:55:57,703:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_13_19_55_46.jpg
+2022-09-13 19:56:07,924:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_13_19_55_56_cars.jpg
+2022-09-13 19:56:18,143:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_13_19_56_06.jpg
+2022-09-13 19:56:28,360:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_13_19_56_17_cars.jpg
+2022-09-13 19:56:38,546:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_13_19_56_27.jpg
+2022-09-13 19:56:48,769:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_13_19_56_37.jpg
+2022-09-13 19:56:57,974:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_13_19_56_47_cars.jpg
+2022-09-13 19:57:08,168:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_13_19_56_57_cars.jpg
+2022-09-13 19:57:18,488:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_13_19_57_07_cars.jpg
+2022-09-13 19:57:28,719:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_13_19_57_17_cars.jpg
+2022-09-13 19:57:38,934:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_13_19_57_27_cars.jpg
+2022-09-13 19:57:48,150:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_13_19_57_37_cars.jpg
+2022-09-13 19:57:58,339:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_13_19_57_47_cars.jpg
+2022-09-13 19:58:08,562:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_13_19_57_58_cars.jpg
+2022-09-13 19:58:18,826:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_13_19_58_08_cars.jpg
+2022-09-13 19:58:29,038:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_13_19_58_18_cars.jpg
+2022-09-13 19:58:39,270:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_13_19_58_28_cars.jpg
+2022-09-13 19:58:49,467:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_13_19_58_38_cars.jpg
+2022-09-13 19:58:59,645:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_13_19_58_48_cars.jpg
+2022-09-13 19:59:09,876:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_13_19_58_58_cars.jpg
+2022-09-13 19:59:20,096:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_13_19_59_08_cars.jpg
+2022-09-13 19:59:30,302:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_13_19_59_18.jpg
+2022-09-13 19:59:40,503:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_13_19_59_28.jpg
+2022-09-13 19:59:50,706:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_13_19_59_39_cars.jpg
+2022-09-13 20:00:00,916:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_13_19_59_49_cars.jpg
+2022-09-13 20:00:10,137:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_13_19_59_59_cars.jpg
+2022-09-13 20:00:20,338:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_13_20_00_09_cars.jpg
+2022-09-13 20:00:30,553:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_13_20_00_19.jpg
+2022-09-13 20:00:40,767:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_13_20_00_29_cars.jpg
+2022-09-13 20:00:50,978:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_13_20_00_39_cars.jpg
+2022-09-13 20:01:01,160:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_13_20_00_49_cars.jpg
+2022-09-13 20:01:11,386:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_13_20_00_59_cars.jpg
+2022-09-13 20:01:21,603:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_13_20_01_10_cars.jpg
+2022-09-13 20:01:30,814:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\2022_09_13_20_01_20.jpg
+2022-09-13 20:01:41,136:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_13_20_01_30_cars.jpg
+2022-09-13 20:01:51,412:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_13_20_01_40_cars.jpg
+2022-09-13 20:02:01,643:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_13_20_01_50_cars.jpg
+2022-09-13 20:02:10,884:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_13_20_02_00_cars.jpg
+2022-09-13 20:02:21,096:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_13_20_02_10_cars.jpg
+2022-09-13 20:02:31,329:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_13_20_02_20_cars.jpg
+2022-09-13 20:02:41,544:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_13_20_02_30_cars.jpg
+2022-09-13 20:02:51,771:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_13_20_02_40_cars.jpg
+2022-09-13 20:03:01,959:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_13_20_02_50_cars.jpg
+2022-09-13 20:03:12,181:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_13_20_03_01_cars.jpg
+2022-09-13 20:03:22,391:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_13_20_03_11_cars.jpg
+2022-09-13 20:03:32,618:firebase:INFO:Uplaoded file to Firebase C:\Users\Boo Boo\Documents\Motion_detection\cam_pictures\detected_vehicles\2022_09_13_20_03_21_cars.jpg

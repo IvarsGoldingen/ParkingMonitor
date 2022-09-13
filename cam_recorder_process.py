@@ -4,6 +4,7 @@ from datetime import datetime
 from multiprocessing import Process, Queue
 import os
 import logging
+from webstream import SurveillanceWebStream
 
 """ 
 For decent camera speed. Now implemented in code
@@ -43,7 +44,8 @@ class MovementRecorder(Process):
     STATUS_WAITING_ON_MOVEMEMENT = 2
     STATUS_RECORDING = 3
 
-    def __init__(self, q_in, q_out, q_status, cam_to_use_nr, fps, file_location, disable_automatic_gain=False):
+    def __init__(self, q_in, q_out, q_status, cam_to_use_nr, fps, file_location, disable_automatic_gain=False
+                 , stream=True):
         """
         :param q_in: Queue for receiving requests from main
         :param q_out: Q for returning results to main
@@ -52,10 +54,12 @@ class MovementRecorder(Process):
         :param fps: Target frames per second
         :param file_location: Where to save the recordings to
         :param disable_automatic_gain: If web cam cannot get good frames this can be enabled
+        :param stream: If True video is streamed to web browser
         """
         super(MovementRecorder, self).__init__()
         self.disable_automatic_gain = disable_automatic_gain
         # Stop recording
+        self.stream = stream
         self.stop_flag = False
         self.flag_return_pic = False
         self.flag_show_video = True
@@ -90,6 +94,11 @@ class MovementRecorder(Process):
         self.display_fps = True
         # Determines sensetivity of movement detection. Smaller values more sensitive. Default 5000
         self.frame_area_for_movement = 5000
+        # Variables for streaming to webserver
+        self.web_q: Queue
+        self.webserver: SurveillanceWebStream
+        self.web_q = None
+        self.webserver = None
 
     def run(self):
         # Inform main that camera initialising
@@ -114,6 +123,12 @@ class MovementRecorder(Process):
         logger.info(f"CAM{self.cam_nr}: Target FPS: {self.fps} Frame time: {self.frame_time}")
         logger.info(f"CAM{self.cam_nr}: Frame size: {self.frame_size}")
         if camera_ok:
+            # Initialise streaming to webserver
+            if self.stream:
+                logging.debug("Strem is True initing webserber")
+                self.web_q = Queue()
+                self.webserver = SurveillanceWebStream(self.web_q)
+                self.webserver.start()
             # Camera initialised successfully, start recording
             self.record_on_movement()
             # self.display_video_only()
@@ -134,6 +149,8 @@ class MovementRecorder(Process):
                 if cmd == "stop":
                     # Main stops video recording
                     logger.debug(f"CAM{self.cam_nr}Stop in queue")
+                    # Set stop bit for web server thread
+                    self.web_q.put((True, None))
                     self.stop_flag = True
                 elif cmd == "pic":
                     # Main requests picture to be returned
@@ -198,7 +215,7 @@ class MovementRecorder(Process):
             # Get current time to calculate if next frame should be taken
             current_time = time.perf_counter()
             fps = 0.0
-            time_passed_since_previous_frame = current_time - self.previous_frame_time
+            time_passed_since_previous_frame = current_time - self.current_frame_time
             if time_passed_since_previous_frame >= self.frame_time:
                 # Frame time passed, ask for next frame
                 # Save previous frame and time of previous frame
@@ -236,12 +253,13 @@ class MovementRecorder(Process):
                     else:
                         # No recording was active
                         if movement:
-                            # Start recorkding on movement
+                            # Start recorkding on movement`
                             self.recording_active = True
                             self.last_movement_time = current_time
                     # FPS between last and current frame
                     fps = self.frame_rate_logging()
                 self.record_file()
+                self.stream_video(self.frame_to_display)
                 if self.flag_show_video and not skip_show_frame:
                     # Show current frame in UI. Put FPS on picture
                     self.put_text_on_frame(fps)
@@ -253,6 +271,11 @@ class MovementRecorder(Process):
         self.capture.release()
         cv2.destroyAllWindows()
         logger.info(f"CAM{self.cam_nr} Stop flag was set, recording stopped")
+
+    def stream_video(self, frame):
+        if self.webserver is not None:
+            self.web_q.put((False, frame))
+
 
     def put_text_on_frame(self, text):
         """

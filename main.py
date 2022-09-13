@@ -1,7 +1,6 @@
 import os
 import queue
 import time
-
 import cv2
 from video_file_manager import FileManager
 from cam_recorder_process import MovementRecorder
@@ -37,14 +36,11 @@ logger.addHandler(file_handler)
 
 
 # TODO:
-# FPS error
+# end frames to webserver only if it is opened
 # Firebeas has no file to delete err
-# Put logs in seperate folder
-# Create google colab with all necceserry steps and info. Clone to own google drive.
-# Comment code and github
 # Handle low framerate when low loght - turn off auto light, stop recording or something
 # CV window inside of tkinter?
-# Train the model more
+# test and Train the model more if needed
 # Add default sensitivity in UI
 # Add car detection sensitivity setting to UI
 # Install google drive for computer used
@@ -118,7 +114,8 @@ class MainUIClass(Tk):
         # For my DELL laptop: camera 2 = web cam, camera 0 = front cam
         self.recorder_1 = MovementRecorder(q_in=self.q_front_send, q_out=self.q_return, q_status=self.q_status,
                                            cam_to_use_nr=self.CAM_TO_USE, fps=10,
-                                           file_location=self.file_location_front)
+                                           file_location=self.file_location_front,
+                                           stream=True)
         # self.recorder_web = MovementRecorder(q_in=q_web_send, q_out=q_return, cam_to_use_nr=2, fps=10, file_location=file_location_web)
         self.folder_mngmnt_thread = None
         # Repeatedly check folder of saved videos for files too small and total folder size
@@ -291,7 +288,7 @@ class MainUIClass(Tk):
         if full_file_path is not None:
             if self.flag_check_saved_pic_for_car:
                 # If set the saved picture should be analysed to detect cars in it
-                logger.info(f"Starting detection of cars {full_file_path}")
+                logger.debug(f"Starting detection of cars {full_file_path}")
                 self.start_detection_of_cars(full_file_path)
                 self.flag_check_saved_pic_for_car = False
 
@@ -306,7 +303,7 @@ class MainUIClass(Tk):
             file_name = f"{self.get_time_date_string()}.jpg"
             full_file_path = os.path.join(self.PICTURE_FOLDER, file_name)
             cv2.imwrite(full_file_path, pic)
-            logger.info(f"Successfully saved image {full_file_path}")
+            logger.debug(f"Successfully saved image {full_file_path}")
             return full_file_path
         return None
 
@@ -346,7 +343,7 @@ class MainUIClass(Tk):
                 delete_after_upload = not self.time_to_save_parking_picture()
             # Upload picture to firebase
             self.q_fb.put((False, analysed_pic_loc, delete_after_upload))
-            logger.info(
+            logger.debug(
                 f"check_veh_detec_queue: highest_confidence {highest_confidence} picture_location{analysed_pic_loc}")
         except queue.Empty:
             logger.debug("Vehicle detector queue empty")
