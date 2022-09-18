@@ -22,7 +22,7 @@ from firebase import GFirebase
 # Setup logging
 log_formatter = logging.Formatter('%(asctime)s:%(name)s:%(levelname)s:%(message)s')
 logger = logging.getLogger(__name__)
-logger.setLevel(logging.INFO)
+logger.setLevel(logging.ERROR)
 # Console debug
 stream_handler = logging.StreamHandler()
 stream_handler.setFormatter(log_formatter)
@@ -31,12 +31,12 @@ logger.addHandler(stream_handler)
 # File logger
 file_handler = logging.FileHandler(os.path.join("logs", "main.log"))
 file_handler.setFormatter(log_formatter)
-file_handler.setLevel(logging.WARNING)
+file_handler.setLevel(logging.INFO)
 logger.addHandler(file_handler)
 
 
 # TODO:
-# end frames to webserver only if it is opened
+# send frames to webserver only if it is opened
 # Firebeas has no file to delete err
 # Handle low framerate when low loght - turn off auto light, stop recording or something
 # CV window inside of tkinter?
@@ -377,20 +377,6 @@ class MainUIClass(Tk):
                 return False
         else:
             return False
-
-    # TODO: delete if no problems
-    # def save_temp_picture_from_recorder(self):
-    #     """
-    #     Get picture from cam recorder queue and save it as a temp.jpg file
-    #     :return: True if successful
-    #     """
-    #     pic = self.get_picture_from_cam_recorder_queue()
-    #     if pic is not None:
-    #         cv2.imwrite("temp.jpg", pic)
-    #         return True
-    #     else:
-    #         logger.error("Unable to get temp picture")
-    #         return False
 
     def get_picture_from_cam_recorder_queue(self):
         # Request picture

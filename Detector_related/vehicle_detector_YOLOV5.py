@@ -9,7 +9,7 @@ import numpy as np
 # Setup logging
 log_formatter = logging.Formatter('%(asctime)s:%(name)s:%(levelname)s:%(message)s')
 logger = logging.getLogger(__name__)
-logger.setLevel(logging.INFO)
+logger.setLevel(logging.ERROR)
 # Console debug
 stream_handler = logging.StreamHandler()
 stream_handler.setFormatter(log_formatter)
@@ -17,7 +17,7 @@ logger.addHandler(stream_handler)
 # File logger
 file_handler = logging.FileHandler(os.path.join("logs", "Vehicle_detector_YOLO5.log"))
 file_handler.setFormatter(log_formatter)
-file_handler.setLevel(logging.WARNING)
+file_handler.setLevel(logging.INFO)
 logger.addHandler(file_handler)
 
 

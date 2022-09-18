@@ -14,7 +14,7 @@ v4l2-ctl -d 2 -c gain_automatic=0
 # Setup logging
 log_formatter = logging.Formatter('%(asctime)s:%(name)s:%(levelname)s:%(message)s')
 logger = logging.getLogger(__name__)
-logger.setLevel(logging.DEBUG)
+logger.setLevel(logging.ERROR)
 # Console debug
 stream_handler = logging.StreamHandler()
 stream_handler.setFormatter(log_formatter)
@@ -22,7 +22,7 @@ logger.addHandler(stream_handler)
 # File logger
 file_handler = logging.FileHandler(os.path.join("logs", "cam_recorder.log"))
 file_handler.setFormatter(log_formatter)
-file_handler.setLevel(logging.DEBUG)
+file_handler.setLevel(logging.INFO)
 logger.addHandler(file_handler)
 
 
@@ -95,10 +95,18 @@ class MovementRecorder(Process):
         # Determines sensetivity of movement detection. Smaller values more sensitive. Default 5000
         self.frame_area_for_movement = 5000
         # Variables for streaming to webserver
-        self.web_q: Queue
+        self.web_q_in: Queue
+        self.web_q_out: Queue
         self.webserver: SurveillanceWebStream
-        self.web_q = None
+        self.web_q_in = None
+        self.web_q_out = None
         self.webserver = None
+        # If True, a video frame must be sent to webserver thread
+        self.streaming_active = False
+        # Used to reset  the stream_active flag
+        self.time_since_last_stream_frame_req = 0.0
+
+
 
     def run(self):
         # Inform main that camera initialising
@@ -125,9 +133,10 @@ class MovementRecorder(Process):
         if camera_ok:
             # Initialise streaming to webserver
             if self.stream:
-                logging.debug("Strem is True initing webserber")
-                self.web_q = Queue()
-                self.webserver = SurveillanceWebStream(self.web_q)
+                logging.debug("Stream is True initiating webserver")
+                self.web_q_in = Queue()
+                self.web_q_out = Queue()
+                self.webserver = SurveillanceWebStream(self.web_q_in,self.web_q_out)
                 self.webserver.start()
             # Camera initialised successfully, start recording
             self.record_on_movement()
@@ -150,7 +159,7 @@ class MovementRecorder(Process):
                     # Main stops video recording
                     logger.debug(f"CAM{self.cam_nr}Stop in queue")
                     # Set stop bit for web server thread
-                    self.web_q.put((True, None))
+                    self.web_q_in.put((True, None))
                     self.stop_flag = True
                 elif cmd == "pic":
                     # Main requests picture to be returned
@@ -273,8 +282,26 @@ class MovementRecorder(Process):
         logger.info(f"CAM{self.cam_nr} Stop flag was set, recording stopped")
 
     def stream_video(self, frame):
+        """
+        :param frame: to be displayed on the webserver
+        """
         if self.webserver is not None:
-            self.web_q.put((False, frame))
+            if not self.web_q_out.empty():
+                # Somebody has opened the webstream
+                while not self.web_q_out.empty():
+                    # Clear the queue
+                    self.web_q_out.get(False)
+                self.time_since_last_stream_frame_req = time.perf_counter()
+                self.streaming_active = True
+            if self.streaming_active:
+                while not self.web_q_in.empty():
+                    # Emptyy previous items from Queue
+                    self.web_q_in.get()
+                self.web_q_in.put((False, frame))
+            time_passed_since_last_stream_req = time.perf_counter() - self.time_since_last_stream_frame_req
+            if time_passed_since_last_stream_req > 1.0:
+                # Consider that nobody has opened the webstream if no frame has bee requested for a second
+                self.streaming_active = False
 
 
     def put_text_on_frame(self, text):

@@ -12,7 +12,7 @@ import os
 # Setup logging
 log_formatter = logging.Formatter('%(asctime)s:%(name)s:%(levelname)s:%(message)s')
 logger = logging.getLogger(__name__)
-logger.setLevel(logging.INFO)
+logger.setLevel(logging.ERROR)
 # Console debug
 stream_handler = logging.StreamHandler()
 stream_handler.setFormatter(log_formatter)
@@ -20,7 +20,7 @@ logger.addHandler(stream_handler)
 # File logger
 file_handler = logging.FileHandler(os.path.join("logs", "webstream.log"))
 file_handler.setFormatter(log_formatter)
-file_handler.setLevel(logging.WARNING)
+file_handler.setLevel(logging.INFO)
 logger.addHandler(file_handler)
 
 
@@ -31,19 +31,21 @@ class SurveillanceWebStream(threading.Thread):
     https://pyimagesearch.com/2019/09/02/opencv-stream-video-to-web-browser-html-page/
     """
 
-    def __init__(self, queue):
+    def __init__(self, queue_in, queue_out):
         """
-        :param queue: Queue for receiving frames to send to the webserver
+        :param queue_in: Queue for receiving frames to send to the webserver
+        :param queue_out: Queue for sending to main thread that a frame is expected
         """
         super().__init__(daemon=True)
-        self.queue = queue
+        self.q_in = queue_in
+        self.q_out = queue_out
         self._flask = Flask(__name__)
 
     def run(self):
         logger.debug(f"Starting flask")
         self._flask.add_url_rule('/', 'base_url', self.index)
         self._flask.add_url_rule('/videostream', 'video_stream', self.video_feed)
-        self._flask.run()
+        self._flask.run(host="0.0.0.0")
 
     def index(self):
         # Called when  http://127.0.0.1:5000/ opened
@@ -52,6 +54,7 @@ class SurveillanceWebStream(threading.Thread):
         return render_template("index.html")
 
     def video_feed(self):
+        print("VIDEOFEED")
         return Response(self.get_frame(),
                         mimetype="multipart/x-mixed-replace; boundary=frame")
 
@@ -59,11 +62,13 @@ class SurveillanceWebStream(threading.Thread):
         """
         Constantly check queue for frames or stop flag
         """
+        print("get_frame")
         while True:
             frame = None
             try:
-                # while not self.queue.empty():
-                stop_flag, frame = self.queue.get(block=True, timeout=0.1)
+                # Let the recording process know that frames should be sent
+                self.q_out.put(True)
+                stop_flag, frame = self.q_in.get(block=True, timeout=0.1)
                 if stop_flag:
                     logger.info(f"Stop flag received - stopping,")
                     break

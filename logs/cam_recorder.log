@@ -305,3 +305,163 @@
 2022-09-13 20:12:51,978:cam_recorder_process:DEBUG:CAM1Stop in queue
 2022-09-13 20:12:51,978:cam_recorder_process:DEBUG:CAM1: Finished recording of file 2022_09_13_20_12_04.mp4
 2022-09-13 20:12:53,538:cam_recorder_process:INFO:CAM1 Stop flag was set, recording stopped
+2022-09-13 20:32:51,705:cam_recorder_process:INFO:CAM1: Camera initialized successfully
+2022-09-13 20:32:51,708:cam_recorder_process:INFO:CAM1: Target FPS: 10 Frame time: 0.1
+2022-09-13 20:32:51,708:cam_recorder_process:INFO:CAM1: Frame size: (640, 480)
+2022-09-13 20:32:51,711:cam_recorder_process:INFO:CAM1: Recording on movement mode started
+2022-09-13 20:32:52,637:cam_recorder_process:DEBUG:CAM1: starting recording of video: 2022_09_13_20_32_52.mp4
+2022-09-13 20:32:52,637:cam_recorder_process:DEBUG:CAM1: Path C:\Users\Boo Boo\Documents\Motion_detection\recordings_front/2022_09_13 exists, no need to create
+2022-09-13 20:33:00,374:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:33:10,453:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:33:20,561:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:33:30,656:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:34:32,920:cam_recorder_process:INFO:CAM1: Camera initialized successfully
+2022-09-13 20:34:32,923:cam_recorder_process:INFO:CAM1: Target FPS: 10 Frame time: 0.1
+2022-09-13 20:34:32,923:cam_recorder_process:INFO:CAM1: Frame size: (640, 480)
+2022-09-13 20:34:32,926:cam_recorder_process:INFO:CAM1: Recording on movement mode started
+2022-09-13 20:34:33,775:cam_recorder_process:DEBUG:CAM1: starting recording of video: 2022_09_13_20_34_33.mp4
+2022-09-13 20:34:33,776:cam_recorder_process:DEBUG:CAM1: Path C:\Users\Boo Boo\Documents\Motion_detection\recordings_front/2022_09_13 exists, no need to create
+2022-09-13 20:34:41,546:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:34:51,590:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:35:01,698:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:35:11,788:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:35:21,898:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:35:31,994:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:35:42,094:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:35:52,200:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:36:02,310:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:36:12,413:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:36:13,092:cam_recorder_process:INFO:CAM1: Avg frame time is 0.10015979439999999 in 1000 frames. Target is: 0.1
+2022-09-13 20:36:22,515:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:36:32,620:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:36:42,724:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:36:52,829:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:37:02,923:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:37:13,029:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:37:23,126:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:37:33,234:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:37:43,343:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:37:53,121:cam_recorder_process:INFO:CAM1: Avg frame time is 0.10003038410000001 in 1000 frames. Target is: 0.1
+2022-09-13 20:37:53,434:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:38:03,544:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:38:13,639:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:38:23,749:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:38:33,843:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:38:43,949:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:38:54,053:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:39:04,146:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:39:14,249:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:39:24,351:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:39:33,140:cam_recorder_process:INFO:CAM1: Avg frame time is 0.1000196643 in 1000 frames. Target is: 0.1
+2022-09-13 20:39:34,456:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:39:44,561:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:39:54,667:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:40:04,762:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:40:14,860:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:40:24,967:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:40:27,149:cam_recorder_process:DEBUG:CAM1: Finished recording of file 2022_09_13_20_34_33.mp4
+2022-09-13 20:40:33,151:cam_recorder_process:DEBUG:CAM1: starting recording of video: 2022_09_13_20_40_33.mp4
+2022-09-13 20:40:33,151:cam_recorder_process:DEBUG:CAM1: Path C:\Users\Boo Boo\Documents\Motion_detection\recordings_front/2022_09_13 exists, no need to create
+2022-09-13 20:40:35,078:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:40:45,171:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:40:55,265:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:41:05,372:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:41:13,156:cam_recorder_process:INFO:CAM1: Avg frame time is 0.10001550909999997 in 1000 frames. Target is: 0.1
+2022-09-13 20:41:15,482:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:41:25,578:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:41:35,671:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:41:45,779:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:41:55,872:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:42:05,984:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:42:10,965:cam_recorder_process:DEBUG:CAM1: Finished recording of file 2022_09_13_20_40_33.mp4
+2022-09-13 20:42:16,075:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:42:26,187:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:42:36,281:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:42:46,389:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:42:53,171:cam_recorder_process:INFO:CAM1: Avg frame time is 0.10001446450000002 in 1000 frames. Target is: 0.1
+2022-09-13 20:42:56,483:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:43:06,594:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:43:16,688:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:43:18,474:cam_recorder_process:DEBUG:CAM1: starting recording of video: 2022_09_13_20_43_18.mp4
+2022-09-13 20:43:18,474:cam_recorder_process:DEBUG:CAM1: Path C:\Users\Boo Boo\Documents\Motion_detection\recordings_front/2022_09_13 exists, no need to create
+2022-09-13 20:43:26,792:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:43:36,887:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:43:46,999:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:43:57,095:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:44:07,203:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:44:17,297:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:44:27,402:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:44:33,184:cam_recorder_process:INFO:CAM1: Avg frame time is 0.10001497239999992 in 1000 frames. Target is: 0.1
+2022-09-13 20:44:37,500:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:44:47,608:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:44:57,703:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:45:07,813:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:45:17,904:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:45:28,012:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:45:38,109:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:45:48,217:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:45:58,323:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:46:08,432:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:46:13,213:cam_recorder_process:INFO:CAM1: Avg frame time is 0.10002782799999997 in 1000 frames. Target is: 0.1
+2022-09-13 20:46:18,530:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:46:28,632:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:46:38,735:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:46:48,843:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:46:58,937:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:47:02,223:cam_recorder_process:DEBUG:CAM1: Finished recording of file 2022_09_13_20_43_18.mp4
+2022-09-13 20:47:09,048:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:47:19,139:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:47:29,252:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:47:37,829:cam_recorder_process:DEBUG:CAM1: starting recording of video: 2022_09_13_20_47_37.mp4
+2022-09-13 20:47:37,830:cam_recorder_process:DEBUG:CAM1: Path C:\Users\Boo Boo\Documents\Motion_detection\recordings_front/2022_09_13 exists, no need to create
+2022-09-13 20:47:39,346:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-13 20:47:47,195:cam_recorder_process:DEBUG:CAM1Stop in queue
+2022-09-13 20:47:47,195:cam_recorder_process:DEBUG:CAM1: Finished recording of file 2022_09_13_20_47_37.mp4
+2022-09-13 20:47:48,731:cam_recorder_process:INFO:CAM1 Stop flag was set, recording stopped
+2022-09-18 16:14:25,552:cam_recorder_process:INFO:CAM1: Camera initialized successfully
+2022-09-18 16:14:25,555:cam_recorder_process:INFO:CAM1: Target FPS: 10 Frame time: 0.1
+2022-09-18 16:14:25,555:cam_recorder_process:INFO:CAM1: Frame size: (640, 480)
+2022-09-18 16:14:25,560:cam_recorder_process:INFO:CAM1: Recording on movement mode started
+2022-09-18 16:14:26,485:cam_recorder_process:DEBUG:CAM1: starting recording of video: 2022_09_18_16_14_26.mp4
+2022-09-18 16:14:26,485:cam_recorder_process:INFO:CAM1: Path does not exist, creating C:\Users\Boo Boo\Documents\Motion_detection\recordings_front/2022_09_18
+2022-09-18 16:14:26,488:cam_recorder_process:DEBUG:CAM1: Path created
+2022-09-18 16:14:34,091:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-18 16:14:44,124:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-18 16:14:54,220:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-18 16:15:04,327:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-18 16:15:14,421:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-18 16:15:24,529:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-18 16:15:34,623:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-18 16:15:44,652:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-18 16:15:54,766:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-18 16:16:04,859:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-18 16:16:05,843:cam_recorder_process:INFO:CAM1: Avg frame time is 0.10027861130000003 in 1000 frames. Target is: 0.1
+2022-09-18 16:16:14,969:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-18 16:16:25,014:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-18 16:16:35,126:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-18 16:16:45,234:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-18 16:16:55,344:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-18 16:17:05,437:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-18 16:17:15,550:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-18 16:17:25,671:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-18 16:17:35,781:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-18 16:17:45,893:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-18 16:17:46,068:cam_recorder_process:INFO:CAM1: Avg frame time is 0.10022420650000007 in 1000 frames. Target is: 0.1
+2022-09-18 16:17:55,985:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-18 16:18:06,094:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-18 16:18:16,187:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-18 16:18:26,297:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-18 16:18:36,389:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-18 16:18:46,499:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-18 16:18:56,594:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-18 16:19:06,703:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-18 16:19:16,796:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-18 16:19:26,085:cam_recorder_process:INFO:CAM1: Avg frame time is 0.10001768719999998 in 1000 frames. Target is: 0.1
+2022-09-18 16:19:26,905:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-18 16:19:37,001:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-18 16:19:47,109:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-18 16:19:57,218:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-18 16:20:07,312:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-18 16:20:17,420:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-18 16:20:27,514:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
+2022-09-18 16:20:37,625:cam_recorder_process:DEBUG:CAM1Retunr pic in queue
