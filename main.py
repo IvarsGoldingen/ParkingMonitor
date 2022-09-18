@@ -22,7 +22,7 @@ from firebase import GFirebase
 # Setup logging
 log_formatter = logging.Formatter('%(asctime)s:%(name)s:%(levelname)s:%(message)s')
 logger = logging.getLogger(__name__)
-logger.setLevel(logging.ERROR)
+logger.setLevel(logging.WARNING)
 # Console debug
 stream_handler = logging.StreamHandler()
 stream_handler.setFormatter(log_formatter)
@@ -53,6 +53,7 @@ def main():
 
 # Mainclass extends tkinter for creation of UI
 class MainUIClass(Tk):
+    # Lenovo inbuilt = 1, dell webcam = 2
     CAM_TO_USE = 1
     # Folder to save recordings in
     PICTURE_FOLDER = os.path.join(os.path.expanduser('~'), 'Documents', 'Motion_detection', 'cam_pictures')
@@ -323,9 +324,9 @@ class MainUIClass(Tk):
         """
         logger.debug("Checking vehicle detector queue")
         try:
-            self.flag_check_veh_detector_queue = False
             # If nothing detected analysed_pic_loc will be equal to original_loc
             highest_confidence, original_loc, analysed_pic_loc = self.q_veh_detect_receive.get(True, 0)
+            self.flag_check_veh_detector_queue = False
             car_detected = True if highest_confidence > 0.0 else False
             self.send_car_detection_mail(car_detected, analysed_pic_loc, highest_confidence)
             delete_after_upload = False
@@ -346,7 +347,7 @@ class MainUIClass(Tk):
             logger.debug(
                 f"check_veh_detec_queue: highest_confidence {highest_confidence} picture_location{analysed_pic_loc}")
         except queue.Empty:
-            logger.debug("Vehicle detector queue empty")
+            logger.warning("Vehicle detector queue empty")
 
     def send_car_detection_mail(self, car_detected, pic_location, highest_confidence):
         if self.flag_send_car_detection_mail:

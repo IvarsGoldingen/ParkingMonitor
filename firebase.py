@@ -12,7 +12,7 @@ from datetime import datetime
 # Setup logging
 log_formatter = logging.Formatter('%(asctime)s:%(name)s:%(levelname)s:%(message)s')
 logger = logging.getLogger(__name__)
-logger.setLevel(logging.ERROR)
+logger.setLevel(logging.DEBUG)
 # Console debug
 stream_handler = logging.StreamHandler()
 stream_handler.setFormatter(log_formatter)
@@ -20,7 +20,7 @@ logger.addHandler(stream_handler)
 # File logger
 file_handler = logging.FileHandler(os.path.join("logs", "Google_firebase.log"))
 file_handler.setFormatter(log_formatter)
-file_handler.setLevel(logging.INFO)
+file_handler.setLevel(logging.DEBUG)
 logger.addHandler(file_handler)
 
 
@@ -30,11 +30,13 @@ class GFirebase(Process):
     Class connects to Google Firebase real time database
     Used to periodically uplaod a picture of parking space.
     """
+
     def __init__(self, q_in, queue_check_interval_s):
         super(GFirebase, self).__init__()
         # Queue for receiving picture file_paths
         self.q_in = q_in
         self.queue_check_interval_s = queue_check_interval_s
+        self.debug_cntr = 0
 
     def run(self):
         self.init_firebase()
@@ -51,6 +53,9 @@ class GFirebase(Process):
         logger.info("Firebase initialised")
 
     def repeated_queue_check(self):
+        self.debug_cntr += 1
+        if self.debug_cntr % 100 == 0:
+            logger.debug("repeated_queue_check")
         stop_flag = False
         if not self.q_in.empty():
             logger.debug("Queue not empty")
@@ -60,10 +65,11 @@ class GFirebase(Process):
             """
             stop_flag, file_path, delete_after_upload = self.q_in.get()
             if not stop_flag:
+                logger.debug(f"Uploading file: {file_path}")
                 # If stop flag not set start analysing picture
                 self.upload_file(file_path)
                 if delete_after_upload:
-                    logger.debug(f"Deleting after upload")
+                    logger.debug(f"Deleting after upload {file_path}")
                     self.delete_file(file_path)
         if not stop_flag:
             # Repeat function if not supposed to be stopped
@@ -79,7 +85,7 @@ class GFirebase(Process):
         # Upload to DB
         self.fb_ref.set({"pic": im_b64})
         self.delete_file("temp_fb_pic.jpg")
-        logger.info(f"Uplaoded file to Firebase {file_path}")
+        logger.info(f"Uploaded file to Firebase {file_path}")
 
     def create_pic_w_time_text(self, file_path):
         img = cv2.imread(file_path)
