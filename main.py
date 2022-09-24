@@ -31,7 +31,7 @@ logger.addHandler(stream_handler)
 # File logger
 file_handler = logging.FileHandler(os.path.join("logs", "main.log"))
 file_handler.setFormatter(log_formatter)
-file_handler.setLevel(logging.INFO)
+file_handler.setLevel(logging.DEBUG)
 logger.addHandler(file_handler)
 
 
@@ -159,8 +159,6 @@ class MainUIClass(Tk):
             picture = self.get_picture_from_cam_recorder_queue()
             if picture is not None:
                 self.act_on_picture(picture)
-            else:
-                pass
         # Start the loop again after delay
         self.after(self.MAINLOOP_OTHER_INTERVAL_MS, self.mainloop_user)
 
@@ -406,7 +404,7 @@ class MainUIClass(Tk):
         try:
             pic = self.q_return.get(True, 1)
         except queue.Empty:
-            logger.error("Unable to get temp picture from recorder")
+            logger.debug("No picture from recorder")
             return None
         return pic
 
