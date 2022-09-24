@@ -1,3 +1,4 @@
+import sys
 from multiprocessing import Process, Queue
 from firebase_admin import credentials, db
 import firebase_admin
@@ -32,6 +33,7 @@ class GFirebase(Process):
     """
 
     def __init__(self, q_in, queue_check_interval_s):
+        logger.debug("__init__")
         super(GFirebase, self).__init__()
         # Queue for receiving picture file_paths
         self.q_in = q_in
@@ -39,6 +41,7 @@ class GFirebase(Process):
         self.debug_cntr = 0
 
     def run(self):
+        logger.debug("Run")
         self.init_firebase()
         self.repeated_queue_check()
 
@@ -67,8 +70,8 @@ class GFirebase(Process):
             if not stop_flag:
                 logger.debug(f"Uploading file: {file_path}")
                 # If stop flag not set start analysing picture
-                self.upload_file(file_path)
-                if delete_after_upload:
+                success = self.upload_file(file_path)
+                if delete_after_upload and success:
                     logger.debug(f"Deleting after upload {file_path}")
                     self.delete_file(file_path)
         if not stop_flag:
@@ -77,20 +80,28 @@ class GFirebase(Process):
             self.repeated_queue_check_thread.start()
 
     def upload_file(self, file_path):
-        self.create_pic_w_time_text(file_path)
-        # Get image as bytes
-        img_data = open("temp_fb_pic.jpg", 'rb').read()
-        # Encode data so it can be uploaded to DB
-        im_b64 = b64encode(img_data).decode("utf8")
-        # Upload to DB
-        self.fb_ref.set({"pic": im_b64})
-        self.delete_file("temp_fb_pic.jpg")
-        logger.info(f"Uploaded file to Firebase {file_path}")
+        success = self.create_pic_w_time_text(file_path)
+        if success:
+            # Get image as bytes
+            img_data = open("temp_fb_pic.jpg", 'rb').read()
+            # Encode data so it can be uploaded to DB
+            im_b64 = b64encode(img_data).decode("utf8")
+            # Upload to DB
+            self.fb_ref.set({"pic": im_b64})
+            self.delete_file("temp_fb_pic.jpg")
+            logger.info(f"Uploaded file to Firebase {file_path}")
+        return success
 
     def create_pic_w_time_text(self, file_path):
-        img = cv2.imread(file_path)
+        try:
+            img = cv2.imread(file_path)
+        except:
+            e = sys.exc_info()[0]
+            logger.error(f"Failed when uploading {e}")
+            return False
         self.draw_time(img, 640, 10)
         cv2.imwrite("temp_fb_pic.jpg", img)
+        return True
 
     def draw_time(self, image, x, y):
         """

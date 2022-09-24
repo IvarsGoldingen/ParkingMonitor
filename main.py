@@ -36,8 +36,7 @@ logger.addHandler(file_handler)
 
 
 # TODO:
-# Rewrite getting picture from cam recorder process
-# Firebeas has no file to delete err
+# Deleting pictures from car detection should be handled in main only, not like it is now
 # Handle low framerate when low loght - turn off auto light, stop recording or something
 # CV window inside of tkinter?
 # test and Train the model more if needed
@@ -349,6 +348,7 @@ class MainUIClass(Tk):
             self.send_car_detection_mail(car_detected, analysed_pic_loc, highest_confidence)
             delete_after_upload = False
             if car_detected:
+                logger.debug(f"Car was detected")
                 # Car detected, 2 images - one with detected cars and the original
                 if not self.SAVE_DETECTED_CAR_IMAGES:
                     # Delete image after uploading to FB depending on setting
@@ -358,6 +358,7 @@ class MainUIClass(Tk):
                     logger.debug(f"Deleting original file because not yet time to save")
                     self.delete_file(original_loc)
             else:
+                logger.debug(f"No car was detected")
                 # Car not detected, only one image file, so if it should be deleted, then after upload to FB
                 delete_after_upload = not self.time_to_save_parking_picture()
             # Upload picture to firebase
