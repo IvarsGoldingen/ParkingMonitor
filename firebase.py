@@ -95,13 +95,13 @@ class GFirebase(Process):
     def create_pic_w_time_text(self, file_path):
         try:
             img = cv2.imread(file_path)
+            self.draw_time(img, 640, 10)
+            cv2.imwrite("temp_fb_pic.jpg", img)
+            return True
         except:
             e = sys.exc_info()[0]
             logger.error(f"Failed when uploading {e}")
             return False
-        self.draw_time(img, 640, 10)
-        cv2.imwrite("temp_fb_pic.jpg", img)
-        return True
 
     def draw_time(self, image, x, y):
         """

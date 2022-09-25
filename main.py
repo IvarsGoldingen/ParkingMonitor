@@ -22,7 +22,7 @@ from firebase import GFirebase
 # Setup logging
 log_formatter = logging.Formatter('%(asctime)s:%(name)s:%(levelname)s:%(message)s')
 logger = logging.getLogger(__name__)
-logger.setLevel(logging.WARNING)
+logger.setLevel(logging.DEBUG)
 # Console debug
 stream_handler = logging.StreamHandler()
 stream_handler.setFormatter(log_formatter)
@@ -74,7 +74,7 @@ class MainUIClass(Tk):
     # How often should the status Queue be checked from the cam recorder process
     MAINLOOP_OTHER_INTERVAL_MS = 100
     # When to send daily email with picture and car detection
-    TIME_OF_MAIL = "17:05"
+    TIME_OF_MAIL = "11:05"
     # Save images with rectangles drawn around cars
     SAVE_DETECTED_CAR_IMAGES = False
     # Images with no analysis. Save for training of model
@@ -116,7 +116,6 @@ class MainUIClass(Tk):
                                            cam_to_use_nr=self.CAM_TO_USE, fps=10,
                                            file_location=self.file_location_front,
                                            stream=True)
-        # self.recorder_web = MovementRecorder(q_in=q_web_send, q_out=q_return, cam_to_use_nr=2, fps=10, file_location=file_location_web)
         self.folder_mngmnt_thread = None
         # Repeatedly check folder of saved videos for files too small and total folder size
         self.start_repeated_folder_mngmnt()
@@ -134,14 +133,12 @@ class MainUIClass(Tk):
         # Indicates that after car detection done a picture should be sent via email
         self.flag_send_car_detection_mail = False
         # Indicates that the mainprogram should check for returned picture from vehicle detector
-        self.flag_check_veh_detector_queue = False
+        self.expecting_picture_from_veh_detector = False
         # Flags for acting on picture received from cam recorder
-        self.expecting_pic_for_save = False
-        self.expecting_pic_for_analysis = False
+        self.expecting_pic_from_cam_recorder = False
         self.time_of_last_parking_image_save = 0
         self.set_up_scheduled_picture_analysis(self.TIME_OF_MAIL)
         self.set_up_ui()
-
 
     def mainloop_user(self):
         """
@@ -153,23 +150,38 @@ class MainUIClass(Tk):
         # Update UI with status of cam recorder
         self.check_status()
         # If started check queue of vehicle detection process for result of picture analysis
-        if self.flag_check_veh_detector_queue:
+        if self.expecting_picture_from_veh_detector:
             self.check_veh_detec_queue()
-        if self.expecting_pic_for_save or self.expecting_pic_for_analysis:
-            picture = self.get_picture_from_cam_recorder_queue()
+        # Get picture from cam recorder
+        if self.expecting_pic_from_cam_recorder:
+            picture = self.check_cam_recorder_queue()
             if picture is not None:
-                self.act_on_picture(picture)
+                self.process_cam_recorder_image(picture)
+                self.expecting_pic_from_cam_recorder = False
         # Start the loop again after delay
         self.after(self.MAINLOOP_OTHER_INTERVAL_MS, self.mainloop_user)
 
-    def act_on_picture(self, picture):
-        if self.expecting_pic_for_save:
-            self.save_pic_in_pic_folder(picture)
-            self.time_of_last_parking_image_save = time.perf_counter()
-            self.expecting_pic_for_save = False
-        if self.expecting_pic_for_analysis:
-            self.analyse_pic(picture)
-            self.expecting_pic_for_analysis = False
+    def process_cam_recorder_image(self, picture):
+        # Always save, will be deleted after if not needed
+        picture_file_path = self.save_pic_in_pic_folder(picture)
+        logger.debug(f"Saved picture in: {picture_file_path}")
+        # Save time of save, because pictures are deleted or saved according to this
+        self.time_of_last_parking_image_save = time.perf_counter()
+        if self.flag_check_saved_pic_for_car:
+            if picture_file_path is not None:
+                # If set the saved picture should be analysed to detect cars in it
+                self.start_detection_of_cars(picture_file_path)
+            self.flag_check_saved_pic_for_car = False
+
+    def start_detection_of_cars(self, picture_path):
+        """
+        Put request data in queue for the vehicle detection object
+        :param picture_path: Path of picture to analyse
+        """
+        logger.debug(f"Starting detection of cars {picture_path}")
+        #  stop_flag, file_path, flag_return_data
+        self.q_veh_detect_send.put((False, picture_path, True))
+        self.expecting_picture_from_veh_detector = True
 
     def set_up_ui(self):
         self.protocol("WM_DELETE_WINDOW", self.save_and_finish)
@@ -192,6 +204,7 @@ class MainUIClass(Tk):
         Periodically detect car in captured pictures
         :return:
         """
+        logger.debug("start_repeated_car_detection")
         if not self.startup:
             # Actually detect cars only on second and further calls
             self.request_detect_car()
@@ -211,17 +224,18 @@ class MainUIClass(Tk):
         self.request_detect_car()
 
     def request_detect_car(self):
+        logger.debug("request_detect_car")
         """
         Detect cars in cam recorder picture
-        :return:
         """
-        if not self.flag_check_saved_pic_for_car:
-            self.expecting_pic_for_analysis = True
-            # Set flag so when the picture is received the program knows to analyse it
-            self.flag_check_saved_pic_for_car = True
-            self.request_picture_from_cam_recorder()
-        else:
-            logger.info("Already detecting car")
+        # Set flag so when the picture is received the program knows to analyse it
+        self.flag_check_saved_pic_for_car = True
+        self.request_picture_from_cam_recorder()
+
+    def request_picture_from_cam_recorder(self):
+        self.expecting_pic_from_cam_recorder = True
+        # Request picture
+        self.q_front_send.put("pic")
 
     def stop_vehicle_detector(self):
         """
@@ -293,20 +307,6 @@ class MainUIClass(Tk):
 
     def save_pic(self):
         self.request_picture_from_cam_recorder()
-        self.expecting_pic_for_save = True
-
-    def analyse_pic(self, picture):
-        """
-        Get picture from cam recorder and save it
-        :return:
-        """
-        full_file_path = self.save_pic_in_pic_folder(picture)
-        if full_file_path is not None:
-            if self.flag_check_saved_pic_for_car:
-                # If set the saved picture should be analysed to detect cars in it
-                logger.debug(f"Starting detection of cars {full_file_path}")
-                self.start_detection_of_cars(full_file_path)
-                self.flag_check_saved_pic_for_car = False
 
     def save_pic_in_pic_folder(self, pic):
         """
@@ -323,15 +323,6 @@ class MainUIClass(Tk):
             return full_file_path
         return None
 
-    def start_detection_of_cars(self, picture_path):
-        """
-        Put request data in queue for the vehicle detection object
-        :param picture_path: Path of picture to analyse
-        """
-        #  stop_flag, file_path, flag_return_data
-        self.q_veh_detect_send.put((False, picture_path, True))
-        self.flag_check_veh_detector_queue = True
-
     def check_veh_detec_queue(self):
         """
         Check if cehicle detection theread has finished analysing picture
@@ -341,7 +332,7 @@ class MainUIClass(Tk):
         try:
             # If nothing detected analysed_pic_loc will be equal to original_loc
             highest_confidence, original_loc, analysed_pic_loc = self.q_veh_detect_receive.get(True, 0)
-            self.flag_check_veh_detector_queue = False
+            self.expecting_picture_from_veh_detector = False
             car_detected = True if highest_confidence > 0.0 else False
             self.send_car_detection_mail(car_detected, analysed_pic_loc, highest_confidence)
             delete_after_upload = False
@@ -364,24 +355,14 @@ class MainUIClass(Tk):
             logger.debug(
                 f"check_veh_detec_queue: highest_confidence {highest_confidence} picture_location{analysed_pic_loc}")
         except queue.Empty:
-            logger.warning("Vehicle detector queue empty")
-
-    def send_car_detection_mail(self, car_detected, pic_location, highest_confidence):
-        if self.flag_send_car_detection_mail:
-            # Reset flag
-            self.flag_send_car_detection_mail = False
-            if car_detected:
-                self.send_pic_in_mail(pic_location, email_subject=f"Car detected, confidence "
-                                                                  f"{highest_confidence}", email_text="blank")
-            else:
-                self.send_pic_in_mail(pic_location, email_subject=f"No cars detected", email_text="blank")
+            logger.debug("Vehicle detector queue empty")
 
     def time_to_save_parking_picture(self):
         """
         :return: True if parking image should not be deleted
                 False if it should be deleted
         """
-        logger.debug(f"time_to_save_parking_picture")
+        logger.debug(f"Determine if parking picture should be deleted or kept")
         if self.SAVE_PARKING_IMAGES:
             current_time = time.perf_counter()
             time_passed_since_last_save = current_time - self.time_of_last_parking_image_save
@@ -391,18 +372,20 @@ class MainUIClass(Tk):
                 self.time_of_last_parking_image_save = current_time
                 return True
             else:
-                logger.debug("Deleting original image")
+                logger.debug("Delete original image")
                 return False
         else:
             return False
 
-    def request_picture_from_cam_recorder(self):
-        # Request picture
-        self.q_front_send.put("pic")
-
-    def get_picture_from_cam_recorder_queue(self):
+    def check_cam_recorder_queue(self):
+        logger.debug("Checking Queue of cam recorder")
+        pic = None
         try:
-            pic = self.q_return.get(True, 1)
+            counter = 0
+            while not self.q_return.empty():
+                pic = self.q_return.get(True, 1)
+                counter += 1
+            logger.debug(f"Cam recorder Queue had {counter} pictures")
         except queue.Empty:
             logger.debug("No picture from recorder")
             return None
@@ -414,25 +397,6 @@ class MainUIClass(Tk):
         :return:
         """
         self.q_front_send.put("video")
-
-    def save_and_finish(self):
-        """
-        User has closed the tkinter UI, shut down program
-        :return:
-        """
-        self.stop_car_detection_thread()
-        self.stop_repeated_folder_mngmnt()
-        self.stop_vehicle_detector()
-        # Stop recording, save file if recording currently in progress
-        self.q_front_send.put("stop")
-        logger.debug("Before join")
-        # Wait for cam recorder process to stop
-        self.recorder_1.join()
-        logger.info("Exiting program by user press")
-        # Close firebase process by setting stop flag
-        self.q_fb.put((True, None, False))
-        # Close tkinter UI
-        self.destroy()
 
     def start_repeated_folder_mngmnt(self):
         """
@@ -454,6 +418,26 @@ class MainUIClass(Tk):
         # Repeat action in regular intervals
         self.folder_mngmnt_thread = Timer(self.CHECK_FOLDER_SIZE_INTERVAL, self.start_repeated_folder_mngmnt)
         self.folder_mngmnt_thread.start()
+
+    def save_and_finish(self):
+        """
+        User has closed the tkinter UI, shut down program
+        :return:
+        """
+        self.stop_car_detection_thread()
+        self.stop_repeated_folder_mngmnt()
+        self.stop_vehicle_detector()
+        # Close firebase process by setting stop flag
+        self.q_fb.put((True, None, False))
+        # Stop recording, save file if recording currently in progress
+        self.q_front_send.put("stop")
+        logger.debug("Before join")
+        # Wait for cam recorder process to stop
+        self.recorder_1.join()
+        logger.info("Exiting program by user press")
+
+        # Close tkinter UI
+        self.destroy()
 
     def stop_repeated_folder_mngmnt(self):
         if self.folder_mngmnt_thread is not None:
@@ -538,7 +522,7 @@ class MainUIClass(Tk):
         dev_port = 0
         working_ports = []
         available_ports = []
-        while len(non_working_ports) < 3:  # if there are more than 5 non working ports stop the testing.
+        while len(non_working_ports) < 3:  # if there are more than 3 non working ports stop the testing.
             camera = cv2.VideoCapture(dev_port)
             if not camera.isOpened():
                 non_working_ports.append(dev_port)
@@ -555,6 +539,18 @@ class MainUIClass(Tk):
                     available_ports.append(dev_port)
             dev_port += 1
         return available_ports, working_ports, non_working_ports
+
+    def send_car_detection_mail(self, car_detected, pic_location, highest_confidence):
+        logger.debug(f"send_car_detection_mail: {pic_location}")
+        if self.flag_send_car_detection_mail:
+            # Reset flag
+            self.flag_send_car_detection_mail = False
+            if car_detected:
+                self.send_pic_in_mail(pic_location, email_subject=f"Car detected, confidence "
+                                                                  f"{highest_confidence}", email_text="Picture "
+                                                                                                      "attached")
+            else:
+                self.send_pic_in_mail(pic_location, email_subject=f"No cars detected", email_text="Picture attached")
 
     def delete_file(self, path):
         if os.path.exists(path):

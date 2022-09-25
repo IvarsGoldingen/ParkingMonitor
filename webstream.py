@@ -54,7 +54,7 @@ class SurveillanceWebStream(threading.Thread):
         return render_template("index.html")
 
     def video_feed(self):
-        print("VIDEOFEED")
+        logger.debug("video_feed")
         return Response(self.get_frame(),
                         mimetype="multipart/x-mixed-replace; boundary=frame")
 
@@ -62,7 +62,7 @@ class SurveillanceWebStream(threading.Thread):
         """
         Constantly check queue for frames or stop flag
         """
-        print("get_frame")
+        logger.debug("get_frame")
         while True:
             frame = None
             try:

@@ -14,7 +14,7 @@ v4l2-ctl -d 2 -c gain_automatic=0
 # Setup logging
 log_formatter = logging.Formatter('%(asctime)s:%(name)s:%(levelname)s:%(message)s')
 logger = logging.getLogger(__name__)
-logger.setLevel(logging.ERROR)
+logger.setLevel(logging.DEBUG)
 # Console debug
 stream_handler = logging.StreamHandler()
 stream_handler.setFormatter(log_formatter)
@@ -22,7 +22,7 @@ logger.addHandler(stream_handler)
 # File logger
 file_handler = logging.FileHandler(os.path.join("logs", "cam_recorder.log"))
 file_handler.setFormatter(log_formatter)
-file_handler.setLevel(logging.INFO)
+file_handler.setLevel(logging.DEBUG)
 logger.addHandler(file_handler)
 
 
@@ -276,6 +276,7 @@ class MovementRecorder(Process):
                     # If this is not called, exceptiouns occur
                     cv2.waitKey(1)
         # Stop flag was set
+        logger.debug(f"Exited main loop")
         self.stop_file_recording()
         self.capture.release()
         cv2.destroyAllWindows()
@@ -349,15 +350,15 @@ class MovementRecorder(Process):
             self.stop_file_recording()
 
     def stop_file_recording(self):
+        logger.debug("Stopping file recording")
         if self.v_out is not None:
             # If video writer is not not stop it
-            # Update status to main
-            self.q_status.put(self.STATUS_WAITING_ON_MOVEMEMENT)
-            logger.debug(f"CAM{self.cam_nr}: Finished recording of file {self.current_file_name}")
+            logger.debug(f"CAM{self.cam_nr}: Stopped recording of file {self.current_file_name}")
             self.v_out.release()
             self.v_out = None
             self.current_file_name = "none"
-
+        else:
+            logger.debug("Nothing to stop")
     def get_time_date_string(self):
         """
         :return: current date and time as string like this : 2022_02_31_19_30_05
