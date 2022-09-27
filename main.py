@@ -541,8 +541,8 @@ class MainUIClass(Tk):
         return available_ports, working_ports, non_working_ports
 
     def send_car_detection_mail(self, car_detected, pic_location, highest_confidence):
-        logger.debug(f"send_car_detection_mail: {pic_location}")
         if self.flag_send_car_detection_mail:
+            logger.debug(f"Sending car detection mail: {pic_location}")
             # Reset flag
             self.flag_send_car_detection_mail = False
             if car_detected:

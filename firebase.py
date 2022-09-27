@@ -83,10 +83,13 @@ class GFirebase(Process):
         success = self.create_pic_w_time_text(file_path)
         if success:
             # Get image as bytes
+            logger.debug(f"Reading image with time data")
             img_data = open("temp_fb_pic.jpg", 'rb').read()
             # Encode data so it can be uploaded to DB
+            logger.debug(f"Encoding image")
             im_b64 = b64encode(img_data).decode("utf8")
             # Upload to DB
+            logger.debug(f"Settign FB reference")
             self.fb_ref.set({"pic": im_b64})
             self.delete_file("temp_fb_pic.jpg")
             logger.info(f"Uploaded file to Firebase {file_path}")
@@ -97,10 +100,11 @@ class GFirebase(Process):
             img = cv2.imread(file_path)
             self.draw_time(img, 640, 10)
             cv2.imwrite("temp_fb_pic.jpg", img)
+            logger.debug(f"Successfuly added time to image")
             return True
         except:
             e = sys.exc_info()[0]
-            logger.error(f"Failed when uploading {e}")
+            logger.error(f"Failed when trying to add text to image {e}")
             return False
 
     def draw_time(self, image, x, y):
