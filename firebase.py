@@ -91,6 +91,7 @@ class GFirebase(Process):
             # Upload to DB
             logger.debug(f"Settign FB reference")
             self.fb_ref.set({"pic": im_b64})
+            logger.debug(f"Deleting temp file")
             self.delete_file("temp_fb_pic.jpg")
             logger.info(f"Uploaded file to Firebase {file_path}")
         return success
@@ -131,8 +132,13 @@ class GFirebase(Process):
         return current_time
 
     def delete_file(self, path):
+        logger.debug(f"delete_file function with path: {path}")
         if os.path.exists(path):
-            os.remove(path)
-            logger.debug(f"Deleted {path}")
+            try:
+                os.remove(path)
+                logger.debug(f"Deleted {path}")
+            except:
+                e = sys.exc_info()[0]
+                logger.error(f"Failed to delete {e}")
         else:
             logger.error(f"No file to delete {path}")
