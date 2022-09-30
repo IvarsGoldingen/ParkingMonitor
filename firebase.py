@@ -58,10 +58,9 @@ class GFirebase(Process):
     def repeated_queue_check(self):
         self.debug_cntr += 1
         if self.debug_cntr % 100 == 0:
-            logger.debug("repeated_queue_check")
+            logger.debug(f"repeated_queue_check count: {self.debug_cntr}")
         stop_flag = False
         if not self.q_in.empty():
-            logger.debug("Queue not empty")
             """
             stop_flag:: if True stop checking queue
             file_path:: location of image to be uploaded to Firebase
@@ -83,14 +82,16 @@ class GFirebase(Process):
         success = self.create_pic_w_time_text(file_path)
         if success:
             # Get image as bytes
-            logger.debug(f"Reading image with time data")
             img_data = open("temp_fb_pic.jpg", 'rb').read()
             # Encode data so it can be uploaded to DB
-            logger.debug(f"Encoding image")
             im_b64 = b64encode(img_data).decode("utf8")
             # Upload to DB
             logger.debug(f"Settign FB reference")
-            self.fb_ref.set({"pic": im_b64})
+            try:
+                self.fb_ref.set({"pic": im_b64})
+            except:
+                e = sys.exc_info()[0]
+                logger.error(f"Failed to upload to FB {e}")
             logger.debug(f"Deleting temp file")
             self.delete_file("temp_fb_pic.jpg")
             logger.info(f"Uploaded file to Firebase {file_path}")
@@ -101,7 +102,6 @@ class GFirebase(Process):
             img = cv2.imread(file_path)
             self.draw_time(img, 640, 10)
             cv2.imwrite("temp_fb_pic.jpg", img)
-            logger.debug(f"Successfuly added time to image")
             return True
         except:
             e = sys.exc_info()[0]
@@ -132,7 +132,6 @@ class GFirebase(Process):
         return current_time
 
     def delete_file(self, path):
-        logger.debug(f"delete_file function with path: {path}")
         if os.path.exists(path):
             try:
                 os.remove(path)
