@@ -14,7 +14,7 @@ v4l2-ctl -d 2 -c gain_automatic=0
 # Setup logging
 log_formatter = logging.Formatter('%(asctime)s:%(name)s:%(levelname)s:%(message)s')
 logger = logging.getLogger(__name__)
-logger.setLevel(logging.DEBUG)
+logger.setLevel(logging.ERROR)
 # Console debug
 stream_handler = logging.StreamHandler()
 stream_handler.setFormatter(log_formatter)
@@ -22,7 +22,7 @@ logger.addHandler(stream_handler)
 # File logger
 file_handler = logging.FileHandler(os.path.join("logs", "cam_recorder.log"))
 file_handler.setFormatter(log_formatter)
-file_handler.setLevel(logging.DEBUG)
+file_handler.setLevel(logging.INFO)
 logger.addHandler(file_handler)
 
 
@@ -106,8 +106,6 @@ class MovementRecorder(Process):
         # Used to reset  the stream_active flag
         self.time_since_last_stream_frame_req = 0.0
 
-
-
     def run(self):
         # Inform main that camera initialising
         self.q_status.put(self.STATUS_INIT)
@@ -136,7 +134,7 @@ class MovementRecorder(Process):
                 logging.debug("Stream is True initiating webserver")
                 self.web_q_in = Queue()
                 self.web_q_out = Queue()
-                self.webserver = SurveillanceWebStream(self.web_q_in,self.web_q_out)
+                self.webserver = SurveillanceWebStream(self.web_q_in, self.web_q_out)
                 self.webserver.start()
             # Camera initialised successfully, start recording
             self.record_on_movement()
@@ -304,7 +302,6 @@ class MovementRecorder(Process):
                 # Consider that nobody has opened the webstream if no frame has bee requested for a second
                 self.streaming_active = False
 
-
     def put_text_on_frame(self, text):
         """
         Put text on top left corner of frame
@@ -336,7 +333,7 @@ class MovementRecorder(Process):
                 current_time = today.strftime("%H_%M_%S")
                 fourcc = cv2.VideoWriter_fourcc(*'mp4v')
                 self.current_file_name = f"{current_date}_{current_time}.mp4"
-                logger.debug(f"CAM{self.cam_nr}: starting recording of video: {self.current_file_name}")
+                logger.info(f"CAM{self.cam_nr}: starting recording of video: {self.current_file_name}")
                 # Create a folder for each day
                 full_file_location = f"{self.file_location}/{current_date}"
                 self.create_folder(full_file_location)
@@ -350,15 +347,13 @@ class MovementRecorder(Process):
             self.stop_file_recording()
 
     def stop_file_recording(self):
-        logger.debug("Stopping file recording")
         if self.v_out is not None:
             # If video writer is not not stop it
-            logger.debug(f"CAM{self.cam_nr}: Stopped recording of file {self.current_file_name}")
+            logger.info(f"CAM{self.cam_nr}: Stopped recording of file {self.current_file_name}")
             self.v_out.release()
             self.v_out = None
             self.current_file_name = "none"
-        else:
-            logger.debug("Nothing to stop")
+
     def get_time_date_string(self):
         """
         :return: current date and time as string like this : 2022_02_31_19_30_05
@@ -429,7 +424,7 @@ class MovementRecorder(Process):
     def display_video_only(self):
         """
         Do not record but just display video.
-        This mode might need tweeking to work.
+        This mode might need tweeking to work, not testerd
         """
         while not self.stop_flag:
             skip_show_frame = False

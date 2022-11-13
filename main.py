@@ -22,7 +22,7 @@ from firebase import GFirebase
 # Setup logging
 log_formatter = logging.Formatter('%(asctime)s:%(name)s:%(levelname)s:%(message)s')
 logger = logging.getLogger(__name__)
-logger.setLevel(logging.INFO)
+logger.setLevel(logging.ERROR)
 # Console debug
 stream_handler = logging.StreamHandler()
 stream_handler.setFormatter(log_formatter)
@@ -40,12 +40,10 @@ logger.addHandler(file_handler)
 # Handle low framerate when low loght - turn off auto light, stop recording or something
 # CV window inside of tkinter?
 # test and Train the model more if needed
-# Add default sensitivity in UI
 # Add car detection sensitivity setting to UI
 # Install google drive for computer used
-# Stream to web browser?
 
-# Start program by craeting object of MainClass
+# Start program by crEAting object of MainClass
 def main():
     main = MainUIClass()
 
@@ -73,8 +71,8 @@ class MainUIClass(Tk):
     LABEL_ENTRY_SET_SIZE = 20
     # How often should the status Queue be checked from the cam recorder process
     MAINLOOP_OTHER_INTERVAL_MS = 100
-    # When to send daily email with picture and car detection
-    TIME_OF_MAIL = "11:05"
+    # When to send daily email with picture and car detection data
+    TIME_OF_MAIL = "17:15"
     # Save images with rectangles drawn around cars
     SAVE_DETECTED_CAR_IMAGES = False
     # Images with no analysis. Save for training of model
@@ -435,7 +433,6 @@ class MainUIClass(Tk):
         # Wait for cam recorder process to stop
         self.recorder_1.join()
         logger.info("Exiting program by user press")
-
         # Close tkinter UI
         self.destroy()
 

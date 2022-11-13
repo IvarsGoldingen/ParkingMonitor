@@ -13,7 +13,7 @@ from datetime import datetime
 # Setup logging
 log_formatter = logging.Formatter('%(asctime)s:%(name)s:%(levelname)s:%(message)s')
 logger = logging.getLogger(__name__)
-logger.setLevel(logging.DEBUG)
+logger.setLevel(logging.ERROR)
 # Console debug
 stream_handler = logging.StreamHandler()
 stream_handler.setFormatter(log_formatter)
@@ -21,7 +21,7 @@ logger.addHandler(stream_handler)
 # File logger
 file_handler = logging.FileHandler(os.path.join("logs", "Google_firebase.log"))
 file_handler.setFormatter(log_formatter)
-file_handler.setLevel(logging.DEBUG)
+file_handler.setLevel(logging.INFO)
 logger.addHandler(file_handler)
 
 
@@ -58,6 +58,7 @@ class GFirebase(Process):
     def repeated_queue_check(self):
         self.debug_cntr += 1
         if self.debug_cntr % 100 == 0:
+            # At one point firebase stopped working
             logger.debug(f"repeated_queue_check count: {self.debug_cntr}")
         stop_flag = False
         if not self.q_in.empty():
@@ -86,7 +87,7 @@ class GFirebase(Process):
             # Encode data so it can be uploaded to DB
             im_b64 = b64encode(img_data).decode("utf8")
             # Upload to DB
-            logger.debug(f"Settign FB reference")
+            logger.debug(f"Setting FB reference")
             try:
                 self.fb_ref.set({"pic": im_b64})
             except:
@@ -94,7 +95,7 @@ class GFirebase(Process):
                 logger.error(f"Failed to upload to FB {e}")
             logger.debug(f"Deleting temp file")
             self.delete_file("temp_fb_pic.jpg")
-            logger.info(f"Uploaded file to Firebase {file_path}")
+            logger.debug(f"Uploaded file to Firebase {file_path}")
         return success
 
     def create_pic_w_time_text(self, file_path):
