@@ -566,18 +566,6 @@ class MainUIClass(Tk):
                 self.send_pic_in_mail(pic_location, email_subject=f"Unknown class ID: "
                                                                   f"{highest_confidence_class_id}",
                                       email_text="Picture attached")
-            # elif highest_confidence_class_id == 0:
-            #     self.send_pic_in_mail(pic_location, email_subject=f"Detected class ID {highest_confidence_class_id} "
-            #                                                       f"Confidence {highest_confidence}",
-            #                           email_text="Picture attached")
-            # elif highest_confidence_class_id == 1:
-            #     self.send_pic_in_mail(pic_location, email_subject=f"Detected class ID {highest_confidence_class_id} "
-            #                                                       f"Confidence {highest_confidence}",
-            #                           email_text="Picture attached")
-            # elif highest_confidence_class_id == 2:
-            #     self.send_pic_in_mail(pic_location, email_subject=f"Detected class ID {highest_confidence_class_id} "
-            #                                                       f"Confidence {highest_confidence}",
-            #                           email_text="Picture attached")
 
 
     def delete_file(self, path):
