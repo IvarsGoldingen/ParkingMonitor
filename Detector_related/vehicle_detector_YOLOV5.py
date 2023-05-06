@@ -41,6 +41,7 @@ class VehicleDetectorYOLO5(Process):
     SCORE_THRESHOLD = 0.5
     NMS_THRESHOLD = 0.45
     CONFIDENCE_THRESHOLD = 0.25
+    NOTHING_DETECTED = -99
 
     # Text parameters.
     FONT_FACE = cv2.FONT_HERSHEY_SIMPLEX
@@ -131,6 +132,7 @@ class VehicleDetectorYOLO5(Process):
     def post_process(self, input_image, outputs):
         # Highest confidence in detected objects
         highest_confidence = 0.0
+        highest_confidence_class = self.NOTHING_DETECTED
         # Lists to hold respective values while unwrapping.
         class_ids = []
         confidences = []
@@ -147,12 +149,13 @@ class VehicleDetectorYOLO5(Process):
             confidence = row[4]
             # Discard bad detections and continue.
             if confidence >= self.confidence_threshold:
-                # Save highest confidence to return to user
-                if confidence > highest_confidence:
-                    highest_confidence = confidence
                 classes_scores = row[5:]
                 # Get the index of max class score.
                 class_id = np.argmax(classes_scores)
+                # Save highest confidence to return to user
+                if confidence > highest_confidence:
+                    highest_confidence = confidence
+                    highest_confidence_class = class_id
                 #  Continue if the class score is above threshold.
                 if (classes_scores[class_id] > self.SCORE_THRESHOLD):
                     confidences.append(confidence)
@@ -178,7 +181,7 @@ class VehicleDetectorYOLO5(Process):
             label = "{}:{:.2f}".format(self.classes[class_ids[i]], confidences[i])
             # Draw label.
             self.draw_label(input_image, label, left, top)
-        return highest_confidence, input_image
+        return highest_confidence, input_image, highest_confidence_class
 
     def detect_vehicles_from_file(self, file_location_name, flag_return_data):
         logger.debug(f"Detecting car in file {file_location_name}")
@@ -186,7 +189,7 @@ class VehicleDetectorYOLO5(Process):
         img = cv2.imread(file_location_name)
         # Process image.
         detections = self.pre_process(img)
-        highest_confidence, img = self.post_process(img.copy(), detections)
+        highest_confidence, img, highest_confidence_class = self.post_process(img.copy(), detections)
         # If nothing detected, have the same file name
         new_file_name = file_location_name
         if highest_confidence > 0.0:
@@ -204,10 +207,10 @@ class VehicleDetectorYOLO5(Process):
             self.delete_file(file_location_name)
         if flag_return_data:
             logger.debug(f"flag_return_data is True returning: {new_file_name}")
-            self.q_out.put((highest_confidence, file_location_name, new_file_name))
+            self.q_out.put((highest_confidence_class, highest_confidence, file_location_name, new_file_name))
         end_detect_time = time.perf_counter()
         logger.debug(f"Detection took {end_detect_time - start_detect_time}s")
-        logger.debug(f"Highest confidence object detected {highest_confidence} cars in picture {file_location_name}")
+        logger.debug(f"Highest confidence {highest_confidence}. Class ID {highest_confidence_class} In picture {file_location_name}")
 
     def create_folder(self, path):
         if os.path.exists(path):

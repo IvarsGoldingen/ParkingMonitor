@@ -51,13 +51,13 @@ def main():
 # Mainclass extends tkinter for creation of UI
 class MainUIClass(Tk):
     # Lenovo inbuilt = 1, dell webcam = 2
-    CAM_TO_USE = 1
+    CAM_TO_USE = 0
     # Folder to save recordings in
     PICTURE_FOLDER = os.path.join(os.path.expanduser('~'), 'Documents', 'Motion_detection', 'cam_pictures')
     # How often to check for a car. Takes some processing power, do not set too often.
     CHECK_FOR_CAR_INTERVAL_S = 10.0
-    # How often to save the non analysed pictures
-    SAVE_PARKING_IMAGE_INTERVAL_S = 20.0
+    # How often to save the non analysed pictures, this is checked at same time when it is checked for a car
+    SAVE_PARKING_IMAGE_INTERVAL_S = 3.0
     # How often to check folder to limit its side
     CHECK_FOLDER_SIZE_INTERVAL = 3600.0
     DELETE_IF_FOLDER_LARGER_THAN_GB = 10.00
@@ -135,8 +135,16 @@ class MainUIClass(Tk):
         # Flags for acting on picture received from cam recorder
         self.expecting_pic_from_cam_recorder = False
         self.time_of_last_parking_image_save = 0
+        # List of detected object classes
+        self.classes = None
+        self.get_object_classes()
         self.set_up_scheduled_picture_analysis(self.TIME_OF_MAIL)
         self.set_up_ui()
+
+    def get_object_classes(self):
+        classesFile = os.path.join("Detector_related", "detector_classes.names")
+        with open(classesFile, 'rt') as f:
+            self.classes = f.read().rstrip('\n').split('\n')
 
     def mainloop_user(self):
         """
@@ -164,7 +172,8 @@ class MainUIClass(Tk):
         picture_file_path = self.save_pic_in_pic_folder(picture)
         logger.debug(f"Saved picture in: {picture_file_path}")
         # Save time of save, because pictures are deleted or saved according to this
-        self.time_of_last_parking_image_save = time.perf_counter()
+        # TODO:
+        # self.time_of_last_parking_image_save = time.perf_counter()
         if self.flag_check_saved_pic_for_car:
             if picture_file_path is not None:
                 # If set the saved picture should be analysed to detect cars in it
@@ -329,10 +338,11 @@ class MainUIClass(Tk):
         logger.debug("Checking vehicle detector queue")
         try:
             # If nothing detected analysed_pic_loc will be equal to original_loc
-            highest_confidence, original_loc, analysed_pic_loc = self.q_veh_detect_receive.get(True, 0)
+            highest_confidence_class_id, highest_confidence, original_loc, analysed_pic_loc = self.q_veh_detect_receive.get(
+                True, 0)
             self.expecting_picture_from_veh_detector = False
             car_detected = True if highest_confidence > 0.0 else False
-            self.send_car_detection_mail(car_detected, analysed_pic_loc, highest_confidence)
+            self.send_car_detection_mail(highest_confidence_class_id, analysed_pic_loc, highest_confidence)
             delete_after_upload = False
             if car_detected:
                 logger.debug(f"Car was detected")
@@ -351,7 +361,8 @@ class MainUIClass(Tk):
             # Upload picture to firebase
             self.q_fb.put((False, analysed_pic_loc, delete_after_upload))
             logger.debug(
-                f"check_veh_detec_queue: highest_confidence {highest_confidence} picture_location{analysed_pic_loc}")
+                f"check_veh_detec_queue: highest_confidence {highest_confidence} of class ID "
+                f"{highest_confidence_class_id} picture_location{analysed_pic_loc}")
         except queue.Empty:
             logger.debug("Vehicle detector queue empty")
 
@@ -537,17 +548,37 @@ class MainUIClass(Tk):
             dev_port += 1
         return available_ports, working_ports, non_working_ports
 
-    def send_car_detection_mail(self, car_detected, pic_location, highest_confidence):
+    def send_car_detection_mail(self, highest_confidence_class_id, pic_location, highest_confidence):
         if self.flag_send_car_detection_mail:
             logger.debug(f"Sending car detection mail: {pic_location}")
             # Reset flag
             self.flag_send_car_detection_mail = False
-            if car_detected:
-                self.send_pic_in_mail(pic_location, email_subject=f"Car detected, confidence "
-                                                                  f"{highest_confidence}", email_text="Picture "
-                                                                                                      "attached")
+            nr_of_classes = len(self.classes)
+            if highest_confidence_class_id == self.vehicle_detector.NOTHING_DETECTED:
+                self.send_pic_in_mail(pic_location, email_subject=f"Nothing detected in image "
+                                      , email_text="Picture attached")
+            elif highest_confidence_class_id >= 0 and highest_confidence_class_id < nr_of_classes:
+                self.send_pic_in_mail(pic_location,
+                                      email_subject=f"Detected {self.classes[highest_confidence_class_id]}. "
+                                                    f"Confidence {highest_confidence}",
+                                      email_text="Picture attached")
             else:
-                self.send_pic_in_mail(pic_location, email_subject=f"No cars detected", email_text="Picture attached")
+                self.send_pic_in_mail(pic_location, email_subject=f"Unknown class ID: "
+                                                                  f"{highest_confidence_class_id}",
+                                      email_text="Picture attached")
+            # elif highest_confidence_class_id == 0:
+            #     self.send_pic_in_mail(pic_location, email_subject=f"Detected class ID {highest_confidence_class_id} "
+            #                                                       f"Confidence {highest_confidence}",
+            #                           email_text="Picture attached")
+            # elif highest_confidence_class_id == 1:
+            #     self.send_pic_in_mail(pic_location, email_subject=f"Detected class ID {highest_confidence_class_id} "
+            #                                                       f"Confidence {highest_confidence}",
+            #                           email_text="Picture attached")
+            # elif highest_confidence_class_id == 2:
+            #     self.send_pic_in_mail(pic_location, email_subject=f"Detected class ID {highest_confidence_class_id} "
+            #                                                       f"Confidence {highest_confidence}",
+            #                           email_text="Picture attached")
+
 
     def delete_file(self, path):
         if os.path.exists(path):

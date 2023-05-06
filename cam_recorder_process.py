@@ -308,7 +308,7 @@ class MovementRecorder(Process):
         :param text:
         """
         cv2.putText(img=self.frame_to_display,
-                    text=f'{text:.3f}',
+                    text=f'{text:.2f}',
                     org=(10, 30),
                     fontFace=cv2.FONT_HERSHEY_SIMPLEX,
                     fontScale=1,
